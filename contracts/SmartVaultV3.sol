@@ -157,6 +157,28 @@ contract SmartVaultV3 is ISmartVault {
         return minted + _amount <= maxMintable();
     }
 
+    /*Bug Fix: 
+    catch: mint revert if _amount == maxMintable
+    Solution: change the following line in SmartVaultV3
+    require(fullyCollateralised(_amount + fee), UNDER_COLL); 
+    to: require(fullyCollateralised(_amount), UNDER_COLL);
+    minted = minted + _amount + fee;
+    to: minted = minted + _amount;
+    EUROs.mint(_to, _amount);
+    to: EUROs.mint(_to, _amount - fee);
+    emit EUROsMinted(_to, _amount, fee);
+    to: emit EUROsMinted(_to, _amount - fee, fee);
+-   */
+    // function mint(address _to, uint256 _amount) external onlyOwner ifNotLiquidated {
+    //     uint256 fee = _amount * ISmartVaultManagerV3(manager).mintFeeRate() / ISmartVaultManagerV3(manager).HUNDRED_PC();
+    //     require(fullyCollateralised(_amount), UNDER_COLL);
+    //     minted = minted + _amount;
+    //     EUROs.mint(_to, _amount - fee);
+    //     EUROs.mint(ISmartVaultManagerV3(manager).protocol(), fee);
+    //     emit EUROsMinted(_to, _amount - fee, fee);
+    // }
+
+    // original version
     function mint(address _to, uint256 _amount) external onlyOwner ifNotLiquidated {
         uint256 fee = _amount * ISmartVaultManagerV3(manager).mintFeeRate() / ISmartVaultManagerV3(manager).HUNDRED_PC();
         require(fullyCollateralised(_amount + fee), UNDER_COLL);
@@ -166,6 +188,18 @@ contract SmartVaultV3 is ISmartVault {
         emit EUROsMinted(_to, _amount, fee);
     }
 
+    // Bug fixed version
+    // Changed EUROs.burn(msg.sender, _amount);
+    // to: EUROs.burn(msg.sender, _amount - fee);
+    // function burn(uint256 _amount) external ifMinted(_amount) {
+    //     uint256 fee = _amount * ISmartVaultManagerV3(manager).burnFeeRate() / ISmartVaultManagerV3(manager).HUNDRED_PC();
+    //     minted = minted - _amount;
+    //     EUROs.burn(msg.sender, _amount - fee);
+    //     IERC20(address(EUROs)).safeTransferFrom(msg.sender, ISmartVaultManagerV3(manager).protocol(), fee);
+    //     emit EUROsBurned(_amount, fee);
+    // }
+
+    // Original version
     function burn(uint256 _amount) external ifMinted(_amount) {
         uint256 fee = _amount * ISmartVaultManagerV3(manager).burnFeeRate() / ISmartVaultManagerV3(manager).HUNDRED_PC();
         minted = minted - _amount;

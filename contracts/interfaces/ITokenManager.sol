@@ -6,7 +6,9 @@ interface ITokenManager {
 
     function getAcceptedTokens() external view returns (Token[] memory);
 
-    function getToken(bytes32 _symbol) external view returns (Token memory);
+    function getToken(bytes32) external view returns (Token memory);
 
-    function getTokenIfExists(address _tokenAddr) external view returns (Token memory);
+    function getTokenIfExists(address) external view returns (Token memory);
+
+    function addAcceptedToken(address, address) external;
 }

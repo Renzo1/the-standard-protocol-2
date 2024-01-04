@@ -1,0 +1,428 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "distributeFees",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "pool",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "runLiquidation",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "distributeFees()": "bb57ad20",
+    "pool()": "16f0115b",
+    "runLiquidation(uint256)": "6f14266c"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"distributeFees\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pool\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"runLiquidation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/interfaces/ILiquidationPoolManager.sol\":\"ILiquidationPoolManager\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@chainlink/=node_modules/@chainlink/\",\":@eth-optimism/=node_modules/@eth-optimism/\",\":@openzeppelin/=node_modules/@openzeppelin/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":eth-gas-reporter/=node_modules/eth-gas-reporter/\",\":forge-std/=lib/forge-std/src/\",\":hardhat/=node_modules/hardhat/\"],\"viaIR\":true},\"sources\":{\"contracts/interfaces/ILiquidationPoolManager.sol\":{\"keccak256\":\"0x53a8c945d1fc811a39c9cc3e10cec9a771762197106127b44185d95918fb0f07\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://5ecf332e73519f4c9676f1a25438739290f8d81900186875b82291f6d1cabeee\",\"dweb:/ipfs/QmeMV7HpRmpmuWqFFR85hdSnwEtzJipXt2rQBPAyfHx4JG\"]},\"contracts/interfaces/ITokenManager.sol\":{\"keccak256\":\"0x3f499d2b53e2ee06c42f1e748311878e568bc5cc7010bd3f48a0c51488f602c3\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://8380d561c3964bd6ca329447ba85adc67b996809228d1b0fd859b77dce814f5b\",\"dweb:/ipfs/QmVfFQkyjd48LLWggFCP6tsJyXjzX8x2fQJQobEvtferLk\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.17+commit.8df45f5f"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "distributeFees"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "pool",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_tokenId",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "runLiquidation"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        ":@chainlink/=node_modules/@chainlink/",
+        ":@eth-optimism/=node_modules/@eth-optimism/",
+        ":@openzeppelin/=node_modules/@openzeppelin/",
+        ":ds-test/=lib/forge-std/lib/ds-test/src/",
+        ":eth-gas-reporter/=node_modules/eth-gas-reporter/",
+        ":forge-std/=lib/forge-std/src/",
+        ":hardhat/=node_modules/hardhat/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "contracts/interfaces/ILiquidationPoolManager.sol": "ILiquidationPoolManager"
+      },
+      "libraries": {},
+      "viaIR": true
+    },
+    "sources": {
+      "contracts/interfaces/ILiquidationPoolManager.sol": {
+        "keccak256": "0x53a8c945d1fc811a39c9cc3e10cec9a771762197106127b44185d95918fb0f07",
+        "urls": [
+          "bzz-raw://5ecf332e73519f4c9676f1a25438739290f8d81900186875b82291f6d1cabeee",
+          "dweb:/ipfs/QmeMV7HpRmpmuWqFFR85hdSnwEtzJipXt2rQBPAyfHx4JG"
+        ],
+        "license": "UNLICENSED"
+      },
+      "contracts/interfaces/ITokenManager.sol": {
+        "keccak256": "0x3f499d2b53e2ee06c42f1e748311878e568bc5cc7010bd3f48a0c51488f602c3",
+        "urls": [
+          "bzz-raw://8380d561c3964bd6ca329447ba85adc67b996809228d1b0fd859b77dce814f5b",
+          "dweb:/ipfs/QmVfFQkyjd48LLWggFCP6tsJyXjzX8x2fQJQobEvtferLk"
+        ],
+        "license": "GPL-3.0-or-later"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "contracts/interfaces/ILiquidationPoolManager.sol",
+    "id": 4078,
+    "exportedSymbols": {
+      "ILiquidationPoolManager": [
+        4077
+      ],
+      "ITokenManager": [
+        4370
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "40:337:7",
+    "nodes": [
+      {
+        "id": 4056,
+        "nodeType": "PragmaDirective",
+        "src": "40:24:7",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".17"
+        ]
+      },
+      {
+        "id": 4057,
+        "nodeType": "ImportDirective",
+        "src": "68:48:7",
+        "nodes": [],
+        "absolutePath": "contracts/interfaces/ITokenManager.sol",
+        "file": "contracts/interfaces/ITokenManager.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 4078,
+        "sourceUnit": 4371,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 4077,
+        "nodeType": "ContractDefinition",
+        "src": "120:257:7",
+        "nodes": [
+          {
+            "id": 4063,
+            "nodeType": "StructDefinition",
+            "src": "161:59:7",
+            "nodes": [],
+            "canonicalName": "ILiquidationPoolManager.Asset",
+            "members": [
+              {
+                "constant": false,
+                "id": 4060,
+                "mutability": "mutable",
+                "name": "token",
+                "nameLocation": "196:5:7",
+                "nodeType": "VariableDeclaration",
+                "scope": 4063,
+                "src": "176:25:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Token_$4339_storage_ptr",
+                  "typeString": "struct ITokenManager.Token"
+                },
+                "typeName": {
+                  "id": 4059,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 4058,
+                    "name": "ITokenManager.Token",
+                    "nameLocations": [
+                      "176:13:7",
+                      "190:5:7"
+                    ],
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 4339,
+                    "src": "176:19:7"
+                  },
+                  "referencedDeclaration": 4339,
+                  "src": "176:19:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Token_$4339_storage_ptr",
+                    "typeString": "struct ITokenManager.Token"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 4062,
+                "mutability": "mutable",
+                "name": "amount",
+                "nameLocation": "211:6:7",
+                "nodeType": "VariableDeclaration",
+                "scope": 4063,
+                "src": "203:14:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 4061,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "203:7:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Asset",
+            "nameLocation": "168:5:7",
+            "scope": 4077,
+            "visibility": "public"
+          },
+          {
+            "id": 4068,
+            "nodeType": "FunctionDefinition",
+            "src": "228:48:7",
+            "nodes": [],
+            "functionSelector": "16f0115b",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "pool",
+            "nameLocation": "237:4:7",
+            "parameters": {
+              "id": 4064,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "241:2:7"
+            },
+            "returnParameters": {
+              "id": 4067,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4066,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4068,
+                  "src": "267:7:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4065,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "267:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "266:9:7"
+            },
+            "scope": 4077,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 4071,
+            "nodeType": "FunctionDefinition",
+            "src": "282:35:7",
+            "nodes": [],
+            "functionSelector": "bb57ad20",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "distributeFees",
+            "nameLocation": "291:14:7",
+            "parameters": {
+              "id": 4069,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "305:2:7"
+            },
+            "returnParameters": {
+              "id": 4070,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "316:0:7"
+            },
+            "scope": 4077,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 4076,
+            "nodeType": "FunctionDefinition",
+            "src": "323:51:7",
+            "nodes": [],
+            "functionSelector": "6f14266c",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "runLiquidation",
+            "nameLocation": "332:14:7",
+            "parameters": {
+              "id": 4074,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4073,
+                  "mutability": "mutable",
+                  "name": "_tokenId",
+                  "nameLocation": "355:8:7",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4076,
+                  "src": "347:16:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4072,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "347:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "346:18:7"
+            },
+            "returnParameters": {
+              "id": 4075,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "373:0:7"
+            },
+            "scope": 4077,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ILiquidationPoolManager",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          4077
+        ],
+        "name": "ILiquidationPoolManager",
+        "nameLocation": "130:23:7",
+        "scope": 4078,
+        "usedErrors": []
+      }
+    ],
+    "license": "UNLICENSED"
+  },
+  "id": 7
+}

@@ -1,0 +1,495 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "vaultAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "minted",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maxMintable",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "totalCollateralValue",
+              "type": "uint256"
+            },
+            {
+              "components": [
+                {
+                  "components": [
+                    {
+                      "internalType": "bytes32",
+                      "name": "symbol",
+                      "type": "bytes32"
+                    },
+                    {
+                      "internalType": "address",
+                      "name": "addr",
+                      "type": "address"
+                    },
+                    {
+                      "internalType": "uint8",
+                      "name": "dec",
+                      "type": "uint8"
+                    },
+                    {
+                      "internalType": "address",
+                      "name": "clAddr",
+                      "type": "address"
+                    },
+                    {
+                      "internalType": "uint8",
+                      "name": "clDec",
+                      "type": "uint8"
+                    }
+                  ],
+                  "internalType": "struct ITokenManager.Token",
+                  "name": "token",
+                  "type": "tuple"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "amount",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "collateralValue",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct ISmartVault.Asset[]",
+              "name": "collateral",
+              "type": "tuple[]"
+            },
+            {
+              "internalType": "bool",
+              "name": "liquidated",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint8",
+              "name": "version",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "vaultType",
+              "type": "bytes32"
+            }
+          ],
+          "internalType": "struct ISmartVault.Status",
+          "name": "_vaultStatus",
+          "type": "tuple"
+        }
+      ],
+      "name": "generateNFTMetadata",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "generateNFTMetadata(uint256,(address,uint256,uint256,uint256,((bytes32,address,uint8,address,uint8),uint256,uint256)[],bool,uint8,bytes32))": "4ac10592"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"vaultAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"minted\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxMintable\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalCollateralValue\",\"type\":\"uint256\"},{\"components\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"symbol\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"uint8\",\"name\":\"dec\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"clAddr\",\"type\":\"address\"},{\"internalType\":\"uint8\",\"name\":\"clDec\",\"type\":\"uint8\"}],\"internalType\":\"struct ITokenManager.Token\",\"name\":\"token\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"collateralValue\",\"type\":\"uint256\"}],\"internalType\":\"struct ISmartVault.Asset[]\",\"name\":\"collateral\",\"type\":\"tuple[]\"},{\"internalType\":\"bool\",\"name\":\"liquidated\",\"type\":\"bool\"},{\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"vaultType\",\"type\":\"bytes32\"}],\"internalType\":\"struct ISmartVault.Status\",\"name\":\"_vaultStatus\",\"type\":\"tuple\"}],\"name\":\"generateNFTMetadata\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/interfaces/INFTMetadataGenerator.sol\":\"INFTMetadataGenerator\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@chainlink/=node_modules/@chainlink/\",\":@eth-optimism/=node_modules/@eth-optimism/\",\":@openzeppelin/=node_modules/@openzeppelin/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":eth-gas-reporter/=node_modules/eth-gas-reporter/\",\":forge-std/=lib/forge-std/src/\",\":hardhat/=node_modules/hardhat/\"],\"viaIR\":true},\"sources\":{\"contracts/interfaces/INFTMetadataGenerator.sol\":{\"keccak256\":\"0x330a24d340026f84f0683be7e9a5a6b36e42adb875d4ca67036d43aa6209df3a\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://c6b17c0adfa515b82840cfdc1cc4c6cd709ea056a16114fb3599233700148e31\",\"dweb:/ipfs/QmaoU6jmTdyWc3VZGuSUfUvgMick5jPnpFbKyF7roFkoMf\"]},\"contracts/interfaces/ISmartVault.sol\":{\"keccak256\":\"0x8d2405599e4598af4921dc89bbf472375972f9de7db69d841bb256e64a0f3bef\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://805559ec9a194a2ed6656e78b82512a8669277caa7f9927e110f07b9136b93b6\",\"dweb:/ipfs/QmXBmUCHS9wPBaLyudu4wfuiEnEoSX6KeCm6ztnVaWgkiB\"]},\"contracts/interfaces/ITokenManager.sol\":{\"keccak256\":\"0x3f499d2b53e2ee06c42f1e748311878e568bc5cc7010bd3f48a0c51488f602c3\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://8380d561c3964bd6ca329447ba85adc67b996809228d1b0fd859b77dce814f5b\",\"dweb:/ipfs/QmVfFQkyjd48LLWggFCP6tsJyXjzX8x2fQJQobEvtferLk\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.17+commit.8df45f5f"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_tokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "struct ISmartVault.Status",
+              "name": "_vaultStatus",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "vaultAddress",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "minted",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "maxMintable",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "totalCollateralValue",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "struct ISmartVault.Asset[]",
+                  "name": "collateral",
+                  "type": "tuple[]",
+                  "components": [
+                    {
+                      "internalType": "struct ITokenManager.Token",
+                      "name": "token",
+                      "type": "tuple",
+                      "components": [
+                        {
+                          "internalType": "bytes32",
+                          "name": "symbol",
+                          "type": "bytes32"
+                        },
+                        {
+                          "internalType": "address",
+                          "name": "addr",
+                          "type": "address"
+                        },
+                        {
+                          "internalType": "uint8",
+                          "name": "dec",
+                          "type": "uint8"
+                        },
+                        {
+                          "internalType": "address",
+                          "name": "clAddr",
+                          "type": "address"
+                        },
+                        {
+                          "internalType": "uint8",
+                          "name": "clDec",
+                          "type": "uint8"
+                        }
+                      ]
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "amount",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "collateralValue",
+                      "type": "uint256"
+                    }
+                  ]
+                },
+                {
+                  "internalType": "bool",
+                  "name": "liquidated",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "version",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "vaultType",
+                  "type": "bytes32"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "generateNFTMetadata",
+          "outputs": [
+            {
+              "internalType": "string",
+              "name": "",
+              "type": "string"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        ":@chainlink/=node_modules/@chainlink/",
+        ":@eth-optimism/=node_modules/@eth-optimism/",
+        ":@openzeppelin/=node_modules/@openzeppelin/",
+        ":ds-test/=lib/forge-std/lib/ds-test/src/",
+        ":eth-gas-reporter/=node_modules/eth-gas-reporter/",
+        ":forge-std/=lib/forge-std/src/",
+        ":hardhat/=node_modules/hardhat/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "contracts/interfaces/INFTMetadataGenerator.sol": "INFTMetadataGenerator"
+      },
+      "libraries": {},
+      "viaIR": true
+    },
+    "sources": {
+      "contracts/interfaces/INFTMetadataGenerator.sol": {
+        "keccak256": "0x330a24d340026f84f0683be7e9a5a6b36e42adb875d4ca67036d43aa6209df3a",
+        "urls": [
+          "bzz-raw://c6b17c0adfa515b82840cfdc1cc4c6cd709ea056a16114fb3599233700148e31",
+          "dweb:/ipfs/QmaoU6jmTdyWc3VZGuSUfUvgMick5jPnpFbKyF7roFkoMf"
+        ],
+        "license": "UNLICENSED"
+      },
+      "contracts/interfaces/ISmartVault.sol": {
+        "keccak256": "0x8d2405599e4598af4921dc89bbf472375972f9de7db69d841bb256e64a0f3bef",
+        "urls": [
+          "bzz-raw://805559ec9a194a2ed6656e78b82512a8669277caa7f9927e110f07b9136b93b6",
+          "dweb:/ipfs/QmXBmUCHS9wPBaLyudu4wfuiEnEoSX6KeCm6ztnVaWgkiB"
+        ],
+        "license": "UNLICENSED"
+      },
+      "contracts/interfaces/ITokenManager.sol": {
+        "keccak256": "0x3f499d2b53e2ee06c42f1e748311878e568bc5cc7010bd3f48a0c51488f602c3",
+        "urls": [
+          "bzz-raw://8380d561c3964bd6ca329447ba85adc67b996809228d1b0fd859b77dce814f5b",
+          "dweb:/ipfs/QmVfFQkyjd48LLWggFCP6tsJyXjzX8x2fQJQobEvtferLk"
+        ],
+        "license": "GPL-3.0-or-later"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "contracts/interfaces/INFTMetadataGenerator.sol",
+    "id": 4092,
+    "exportedSymbols": {
+      "INFTMetadataGenerator": [
+        4091
+      ],
+      "ISmartVault": [
+        4175
+      ],
+      "ITokenManager": [
+        4370
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "40:244:8",
+    "nodes": [
+      {
+        "id": 4079,
+        "nodeType": "PragmaDirective",
+        "src": "40:23:8",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "0.8",
+          ".17"
+        ]
+      },
+      {
+        "id": 4080,
+        "nodeType": "ImportDirective",
+        "src": "67:46:8",
+        "nodes": [],
+        "absolutePath": "contracts/interfaces/ISmartVault.sol",
+        "file": "contracts/interfaces/ISmartVault.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 4092,
+        "sourceUnit": 4176,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 4091,
+        "nodeType": "ContractDefinition",
+        "src": "117:167:8",
+        "nodes": [
+          {
+            "id": 4090,
+            "nodeType": "FunctionDefinition",
+            "src": "156:125:8",
+            "nodes": [],
+            "functionSelector": "4ac10592",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "generateNFTMetadata",
+            "nameLocation": "165:19:8",
+            "parameters": {
+              "id": 4086,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4082,
+                  "mutability": "mutable",
+                  "name": "_tokenId",
+                  "nameLocation": "193:8:8",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4090,
+                  "src": "185:16:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4081,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "185:7:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4085,
+                  "mutability": "mutable",
+                  "name": "_vaultStatus",
+                  "nameLocation": "229:12:8",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4090,
+                  "src": "203:38:8",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Status_$4155_memory_ptr",
+                    "typeString": "struct ISmartVault.Status"
+                  },
+                  "typeName": {
+                    "id": 4084,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 4083,
+                      "name": "ISmartVault.Status",
+                      "nameLocations": [
+                        "203:11:8",
+                        "215:6:8"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 4155,
+                      "src": "203:18:8"
+                    },
+                    "referencedDeclaration": 4155,
+                    "src": "203:18:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Status_$4155_storage_ptr",
+                      "typeString": "struct ISmartVault.Status"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "184:58:8"
+            },
+            "returnParameters": {
+              "id": 4089,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4088,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4090,
+                  "src": "266:13:8",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4087,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "266:6:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "265:15:8"
+            },
+            "scope": 4091,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "INFTMetadataGenerator",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          4091
+        ],
+        "name": "INFTMetadataGenerator",
+        "nameLocation": "127:21:8",
+        "scope": 4092,
+        "usedErrors": []
+      }
+    ],
+    "license": "UNLICENSED"
+  },
+  "id": 8
+}

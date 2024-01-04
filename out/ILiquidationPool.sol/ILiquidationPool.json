@@ -1,0 +1,1302 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "claimRewards",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "decreasePosition",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "bytes32",
+                  "name": "symbol",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "address",
+                  "name": "addr",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "dec",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "address",
+                  "name": "clAddr",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "clDec",
+                  "type": "uint8"
+                }
+              ],
+              "internalType": "struct ITokenManager.Token",
+              "name": "token",
+              "type": "tuple"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct ILiquidationPoolManager.Asset[]",
+          "name": "",
+          "type": "tuple[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "distributeAssets",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "increasePosition",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "manager",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "position",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "holder",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "TST",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "EUROs",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct ILiquidationPool.Position",
+          "name": "",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "symbol",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint8",
+              "name": "dec",
+              "type": "uint8"
+            }
+          ],
+          "internalType": "struct ILiquidationPool.Reward[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "tokenManager",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "claimRewards()": "372500ab",
+    "decreasePosition(uint256,uint256)": "3bacfca9",
+    "distributeAssets(((bytes32,address,uint8,address,uint8),uint256)[],uint256,uint256)": "bfb08fe0",
+    "increasePosition(uint256,uint256)": "6fe5452c",
+    "manager()": "481c6a75",
+    "position(address)": "b7648fb9",
+    "tokenManager()": "2a709b14"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"claimRewards\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"decreasePosition\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"symbol\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"uint8\",\"name\":\"dec\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"clAddr\",\"type\":\"address\"},{\"internalType\":\"uint8\",\"name\":\"clDec\",\"type\":\"uint8\"}],\"internalType\":\"struct ITokenManager.Token\",\"name\":\"token\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"struct ILiquidationPoolManager.Asset[]\",\"name\":\"\",\"type\":\"tuple[]\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"distributeAssets\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"increasePosition\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"manager\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"position\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"holder\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"TST\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"EUROs\",\"type\":\"uint256\"}],\"internalType\":\"struct ILiquidationPool.Position\",\"name\":\"\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"symbol\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"dec\",\"type\":\"uint8\"}],\"internalType\":\"struct ILiquidationPool.Reward[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"tokenManager\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"test/foundry/interfaces/ILiquidationPool.sol\":\"ILiquidationPool\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@chainlink/=node_modules/@chainlink/\",\":@eth-optimism/=node_modules/@eth-optimism/\",\":@openzeppelin/=node_modules/@openzeppelin/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":eth-gas-reporter/=node_modules/eth-gas-reporter/\",\":forge-std/=lib/forge-std/src/\",\":hardhat/=node_modules/hardhat/\"],\"viaIR\":true},\"sources\":{\"contracts/interfaces/ITokenManager.sol\":{\"keccak256\":\"0x3f499d2b53e2ee06c42f1e748311878e568bc5cc7010bd3f48a0c51488f602c3\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://8380d561c3964bd6ca329447ba85adc67b996809228d1b0fd859b77dce814f5b\",\"dweb:/ipfs/QmVfFQkyjd48LLWggFCP6tsJyXjzX8x2fQJQobEvtferLk\"]},\"test/foundry/interfaces/ILiquidationPool.sol\":{\"keccak256\":\"0x990df0ff6be081f9eefc7d57dc87edbf46c28333d327eb0dfbcdd0cab278af67\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://24059b483dad4cabcaca34e8421174196de78e45af67a067efd718da41fcf6bc\",\"dweb:/ipfs/QmajqmLwkFspP2DVrbDoThFyoigtx6PVYN3eEYrrGrbv4T\"]},\"test/foundry/interfaces/ILiquidationPoolManager.sol\":{\"keccak256\":\"0x123ff3cd63d70961421a36ad2202d78ab824d366bc7d54ef4eb57bfe53ae662b\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://94e4e01ba38cb877a4cd07ac5711847bdfa86167c1b4baa0c8b7d991d283affe\",\"dweb:/ipfs/QmPb7ox9nqWQUWWFp38DzXJbAVFzaFR4zqPxeJuXWsYDCs\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.17+commit.8df45f5f"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "claimRewards"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "decreasePosition"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "struct ILiquidationPoolManager.Asset[]",
+              "name": "",
+              "type": "tuple[]",
+              "components": [
+                {
+                  "internalType": "struct ITokenManager.Token",
+                  "name": "token",
+                  "type": "tuple",
+                  "components": [
+                    {
+                      "internalType": "bytes32",
+                      "name": "symbol",
+                      "type": "bytes32"
+                    },
+                    {
+                      "internalType": "address",
+                      "name": "addr",
+                      "type": "address"
+                    },
+                    {
+                      "internalType": "uint8",
+                      "name": "dec",
+                      "type": "uint8"
+                    },
+                    {
+                      "internalType": "address",
+                      "name": "clAddr",
+                      "type": "address"
+                    },
+                    {
+                      "internalType": "uint8",
+                      "name": "clDec",
+                      "type": "uint8"
+                    }
+                  ]
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "amount",
+                  "type": "uint256"
+                }
+              ]
+            },
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "payable",
+          "type": "function",
+          "name": "distributeAssets"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "increasePosition"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "manager",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "position",
+          "outputs": [
+            {
+              "internalType": "struct ILiquidationPool.Position",
+              "name": "",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "holder",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "TST",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "EUROs",
+                  "type": "uint256"
+                }
+              ]
+            },
+            {
+              "internalType": "struct ILiquidationPool.Reward[]",
+              "name": "",
+              "type": "tuple[]",
+              "components": [
+                {
+                  "internalType": "bytes32",
+                  "name": "symbol",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "amount",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "dec",
+                  "type": "uint8"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "tokenManager",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        ":@chainlink/=node_modules/@chainlink/",
+        ":@eth-optimism/=node_modules/@eth-optimism/",
+        ":@openzeppelin/=node_modules/@openzeppelin/",
+        ":ds-test/=lib/forge-std/lib/ds-test/src/",
+        ":eth-gas-reporter/=node_modules/eth-gas-reporter/",
+        ":forge-std/=lib/forge-std/src/",
+        ":hardhat/=node_modules/hardhat/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "test/foundry/interfaces/ILiquidationPool.sol": "ILiquidationPool"
+      },
+      "libraries": {},
+      "viaIR": true
+    },
+    "sources": {
+      "contracts/interfaces/ITokenManager.sol": {
+        "keccak256": "0x3f499d2b53e2ee06c42f1e748311878e568bc5cc7010bd3f48a0c51488f602c3",
+        "urls": [
+          "bzz-raw://8380d561c3964bd6ca329447ba85adc67b996809228d1b0fd859b77dce814f5b",
+          "dweb:/ipfs/QmVfFQkyjd48LLWggFCP6tsJyXjzX8x2fQJQobEvtferLk"
+        ],
+        "license": "GPL-3.0-or-later"
+      },
+      "test/foundry/interfaces/ILiquidationPool.sol": {
+        "keccak256": "0x990df0ff6be081f9eefc7d57dc87edbf46c28333d327eb0dfbcdd0cab278af67",
+        "urls": [
+          "bzz-raw://24059b483dad4cabcaca34e8421174196de78e45af67a067efd718da41fcf6bc",
+          "dweb:/ipfs/QmajqmLwkFspP2DVrbDoThFyoigtx6PVYN3eEYrrGrbv4T"
+        ],
+        "license": "UNLICENSED"
+      },
+      "test/foundry/interfaces/ILiquidationPoolManager.sol": {
+        "keccak256": "0x123ff3cd63d70961421a36ad2202d78ab824d366bc7d54ef4eb57bfe53ae662b",
+        "urls": [
+          "bzz-raw://94e4e01ba38cb877a4cd07ac5711847bdfa86167c1b4baa0c8b7d991d283affe",
+          "dweb:/ipfs/QmPb7ox9nqWQUWWFp38DzXJbAVFzaFR4zqPxeJuXWsYDCs"
+        ],
+        "license": "UNLICENSED"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "test/foundry/interfaces/ILiquidationPool.sol",
+    "id": 59671,
+    "exportedSymbols": {
+      "ILiquidationPool": [
+        59670
+      ],
+      "ILiquidationPoolManager": [
+        59698
+      ],
+      "ITokenManager": [
+        4370
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "40:734:87",
+    "nodes": [
+      {
+        "id": 59604,
+        "nodeType": "PragmaDirective",
+        "src": "40:24:87",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".17"
+        ]
+      },
+      {
+        "id": 59605,
+        "nodeType": "ImportDirective",
+        "src": "68:39:87",
+        "nodes": [],
+        "absolutePath": "test/foundry/interfaces/ILiquidationPoolManager.sol",
+        "file": "./ILiquidationPoolManager.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 59671,
+        "sourceUnit": 59699,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 59670,
+        "nodeType": "ContractDefinition",
+        "src": "111:663:87",
+        "nodes": [
+          {
+            "id": 59612,
+            "nodeType": "StructDefinition",
+            "src": "145:64:87",
+            "nodes": [],
+            "canonicalName": "ILiquidationPool.Position",
+            "members": [
+              {
+                "constant": false,
+                "id": 59607,
+                "mutability": "mutable",
+                "name": "holder",
+                "nameLocation": "172:6:87",
+                "nodeType": "VariableDeclaration",
+                "scope": 59612,
+                "src": "164:14:87",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 59606,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "164:7:87",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 59609,
+                "mutability": "mutable",
+                "name": "TST",
+                "nameLocation": "188:3:87",
+                "nodeType": "VariableDeclaration",
+                "scope": 59612,
+                "src": "180:11:87",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 59608,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "180:7:87",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 59611,
+                "mutability": "mutable",
+                "name": "EUROs",
+                "nameLocation": "201:5:87",
+                "nodeType": "VariableDeclaration",
+                "scope": 59612,
+                "src": "193:13:87",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 59610,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "193:7:87",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Position",
+            "nameLocation": "152:8:87",
+            "scope": 59670,
+            "visibility": "public"
+          },
+          {
+            "id": 59619,
+            "nodeType": "StructDefinition",
+            "src": "215:60:87",
+            "nodes": [],
+            "canonicalName": "ILiquidationPool.Reward",
+            "members": [
+              {
+                "constant": false,
+                "id": 59614,
+                "mutability": "mutable",
+                "name": "symbol",
+                "nameLocation": "239:6:87",
+                "nodeType": "VariableDeclaration",
+                "scope": 59619,
+                "src": "231:14:87",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 59613,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "231:7:87",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 59616,
+                "mutability": "mutable",
+                "name": "amount",
+                "nameLocation": "255:6:87",
+                "nodeType": "VariableDeclaration",
+                "scope": 59619,
+                "src": "247:14:87",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 59615,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "247:7:87",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 59618,
+                "mutability": "mutable",
+                "name": "dec",
+                "nameLocation": "269:3:87",
+                "nodeType": "VariableDeclaration",
+                "scope": 59619,
+                "src": "263:9:87",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 59617,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "263:5:87",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Reward",
+            "nameLocation": "222:6:87",
+            "scope": 59670,
+            "visibility": "public"
+          },
+          {
+            "id": 59624,
+            "nodeType": "FunctionDefinition",
+            "src": "287:51:87",
+            "nodes": [],
+            "functionSelector": "481c6a75",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "manager",
+            "nameLocation": "296:7:87",
+            "parameters": {
+              "id": 59620,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "303:2:87"
+            },
+            "returnParameters": {
+              "id": 59623,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 59622,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 59624,
+                  "src": "329:7:87",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 59621,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "329:7:87",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "328:9:87"
+            },
+            "scope": 59670,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 59629,
+            "nodeType": "FunctionDefinition",
+            "src": "346:56:87",
+            "nodes": [],
+            "functionSelector": "2a709b14",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tokenManager",
+            "nameLocation": "355:12:87",
+            "parameters": {
+              "id": 59625,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "367:2:87"
+            },
+            "returnParameters": {
+              "id": 59628,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 59627,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 59629,
+                  "src": "393:7:87",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 59626,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "393:7:87",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "392:9:87"
+            },
+            "scope": 59670,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 59641,
+            "nodeType": "FunctionDefinition",
+            "src": "410:83:87",
+            "nodes": [],
+            "functionSelector": "b7648fb9",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "position",
+            "nameLocation": "419:8:87",
+            "parameters": {
+              "id": 59632,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 59631,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 59641,
+                  "src": "428:7:87",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 59630,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "428:7:87",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "427:9:87"
+            },
+            "returnParameters": {
+              "id": 59640,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 59635,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 59641,
+                  "src": "459:15:87",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Position_$59612_memory_ptr",
+                    "typeString": "struct ILiquidationPool.Position"
+                  },
+                  "typeName": {
+                    "id": 59634,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 59633,
+                      "name": "Position",
+                      "nameLocations": [
+                        "459:8:87"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 59612,
+                      "src": "459:8:87"
+                    },
+                    "referencedDeclaration": 59612,
+                    "src": "459:8:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Position_$59612_storage_ptr",
+                      "typeString": "struct ILiquidationPool.Position"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 59639,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 59641,
+                  "src": "476:15:87",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Reward_$59619_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct ILiquidationPool.Reward[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 59637,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 59636,
+                        "name": "Reward",
+                        "nameLocations": [
+                          "476:6:87"
+                        ],
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 59619,
+                        "src": "476:6:87"
+                      },
+                      "referencedDeclaration": 59619,
+                      "src": "476:6:87",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Reward_$59619_storage_ptr",
+                        "typeString": "struct ILiquidationPool.Reward"
+                      }
+                    },
+                    "id": 59638,
+                    "nodeType": "ArrayTypeName",
+                    "src": "476:8:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Reward_$59619_storage_$dyn_storage_ptr",
+                      "typeString": "struct ILiquidationPool.Reward[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "458:34:87"
+            },
+            "scope": 59670,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 59648,
+            "nodeType": "FunctionDefinition",
+            "src": "501:53:87",
+            "nodes": [],
+            "functionSelector": "6fe5452c",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "increasePosition",
+            "nameLocation": "510:16:87",
+            "parameters": {
+              "id": 59646,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 59643,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 59648,
+                  "src": "527:7:87",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 59642,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "527:7:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 59645,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 59648,
+                  "src": "536:7:87",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 59644,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "536:7:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "526:18:87"
+            },
+            "returnParameters": {
+              "id": 59647,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "553:0:87"
+            },
+            "scope": 59670,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 59655,
+            "nodeType": "FunctionDefinition",
+            "src": "564:53:87",
+            "nodes": [],
+            "functionSelector": "3bacfca9",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "decreasePosition",
+            "nameLocation": "573:16:87",
+            "parameters": {
+              "id": 59653,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 59650,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 59655,
+                  "src": "590:7:87",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 59649,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "590:7:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 59652,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 59655,
+                  "src": "599:7:87",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 59651,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "599:7:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "589:18:87"
+            },
+            "returnParameters": {
+              "id": 59654,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "616:0:87"
+            },
+            "scope": 59670,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 59658,
+            "nodeType": "FunctionDefinition",
+            "src": "627:33:87",
+            "nodes": [],
+            "functionSelector": "372500ab",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "claimRewards",
+            "nameLocation": "636:12:87",
+            "parameters": {
+              "id": 59656,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "648:2:87"
+            },
+            "returnParameters": {
+              "id": 59657,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "659:0:87"
+            },
+            "scope": 59670,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 59669,
+            "nodeType": "FunctionDefinition",
+            "src": "668:101:87",
+            "nodes": [],
+            "functionSelector": "bfb08fe0",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "distributeAssets",
+            "nameLocation": "677:16:87",
+            "parameters": {
+              "id": 59667,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 59662,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 59669,
+                  "src": "694:38:87",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Asset_$59679_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct ILiquidationPoolManager.Asset[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 59660,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 59659,
+                        "name": "ILiquidationPoolManager.Asset",
+                        "nameLocations": [
+                          "694:23:87",
+                          "718:5:87"
+                        ],
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 59679,
+                        "src": "694:29:87"
+                      },
+                      "referencedDeclaration": 59679,
+                      "src": "694:29:87",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Asset_$59679_storage_ptr",
+                        "typeString": "struct ILiquidationPoolManager.Asset"
+                      }
+                    },
+                    "id": 59661,
+                    "nodeType": "ArrayTypeName",
+                    "src": "694:31:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Asset_$59679_storage_$dyn_storage_ptr",
+                      "typeString": "struct ILiquidationPoolManager.Asset[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 59664,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 59669,
+                  "src": "734:7:87",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 59663,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "734:7:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 59666,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 59669,
+                  "src": "743:7:87",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 59665,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "743:7:87",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "693:58:87"
+            },
+            "returnParameters": {
+              "id": 59668,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "768:0:87"
+            },
+            "scope": 59670,
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ILiquidationPool",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          59670
+        ],
+        "name": "ILiquidationPool",
+        "nameLocation": "121:16:87",
+        "scope": 59671,
+        "usedErrors": []
+      }
+    ],
+    "license": "UNLICENSED"
+  },
+  "id": 87
+}

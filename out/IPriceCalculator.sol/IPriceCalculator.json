@@ -1,0 +1,816 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "symbol",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "address",
+              "name": "addr",
+              "type": "address"
+            },
+            {
+              "internalType": "uint8",
+              "name": "dec",
+              "type": "uint8"
+            },
+            {
+              "internalType": "address",
+              "name": "clAddr",
+              "type": "address"
+            },
+            {
+              "internalType": "uint8",
+              "name": "clDec",
+              "type": "uint8"
+            }
+          ],
+          "internalType": "struct ITokenManager.Token",
+          "name": "_token",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "eurToToken",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "symbol",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "address",
+              "name": "addr",
+              "type": "address"
+            },
+            {
+              "internalType": "uint8",
+              "name": "dec",
+              "type": "uint8"
+            },
+            {
+              "internalType": "address",
+              "name": "clAddr",
+              "type": "address"
+            },
+            {
+              "internalType": "uint8",
+              "name": "clDec",
+              "type": "uint8"
+            }
+          ],
+          "internalType": "struct ITokenManager.Token",
+          "name": "_token",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenToEur",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "symbol",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "address",
+              "name": "addr",
+              "type": "address"
+            },
+            {
+              "internalType": "uint8",
+              "name": "dec",
+              "type": "uint8"
+            },
+            {
+              "internalType": "address",
+              "name": "clAddr",
+              "type": "address"
+            },
+            {
+              "internalType": "uint8",
+              "name": "clDec",
+              "type": "uint8"
+            }
+          ],
+          "internalType": "struct ITokenManager.Token",
+          "name": "_token",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenToEurAvg",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "eurToToken((bytes32,address,uint8,address,uint8),uint256)": "53d37212",
+    "tokenToEur((bytes32,address,uint8,address,uint8),uint256)": "d4d6c4e2",
+    "tokenToEurAvg((bytes32,address,uint8,address,uint8),uint256)": "32ed2bf3"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"symbol\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"uint8\",\"name\":\"dec\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"clAddr\",\"type\":\"address\"},{\"internalType\":\"uint8\",\"name\":\"clDec\",\"type\":\"uint8\"}],\"internalType\":\"struct ITokenManager.Token\",\"name\":\"_token\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"eurToToken\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"symbol\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"uint8\",\"name\":\"dec\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"clAddr\",\"type\":\"address\"},{\"internalType\":\"uint8\",\"name\":\"clDec\",\"type\":\"uint8\"}],\"internalType\":\"struct ITokenManager.Token\",\"name\":\"_token\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"tokenToEur\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"symbol\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"uint8\",\"name\":\"dec\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"clAddr\",\"type\":\"address\"},{\"internalType\":\"uint8\",\"name\":\"clDec\",\"type\":\"uint8\"}],\"internalType\":\"struct ITokenManager.Token\",\"name\":\"_token\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"tokenToEurAvg\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/interfaces/IPriceCalculator.sol\":\"IPriceCalculator\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@chainlink/=node_modules/@chainlink/\",\":@eth-optimism/=node_modules/@eth-optimism/\",\":@openzeppelin/=node_modules/@openzeppelin/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":eth-gas-reporter/=node_modules/eth-gas-reporter/\",\":forge-std/=lib/forge-std/src/\",\":hardhat/=node_modules/hardhat/\"],\"viaIR\":true},\"sources\":{\"contracts/interfaces/IPriceCalculator.sol\":{\"keccak256\":\"0xeef1faaa9471d88c4d4f9d765c5845aa1d15b9e9d6914119c8d185ccfab0a405\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://73364c3f72d53ab903596c9f4bf9ba505bfcdae1cd0fc059ec6bdb373de524bb\",\"dweb:/ipfs/QmP1sPjfGuCfKUdYwCAWGQzgdU8C1dWcVRMCJD3kvimucP\"]},\"contracts/interfaces/ITokenManager.sol\":{\"keccak256\":\"0x3f499d2b53e2ee06c42f1e748311878e568bc5cc7010bd3f48a0c51488f602c3\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://8380d561c3964bd6ca329447ba85adc67b996809228d1b0fd859b77dce814f5b\",\"dweb:/ipfs/QmVfFQkyjd48LLWggFCP6tsJyXjzX8x2fQJQobEvtferLk\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.17+commit.8df45f5f"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "struct ITokenManager.Token",
+              "name": "_token",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "bytes32",
+                  "name": "symbol",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "address",
+                  "name": "addr",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "dec",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "address",
+                  "name": "clAddr",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "clDec",
+                  "type": "uint8"
+                }
+              ]
+            },
+            {
+              "internalType": "uint256",
+              "name": "_amount",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "eurToToken",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "struct ITokenManager.Token",
+              "name": "_token",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "bytes32",
+                  "name": "symbol",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "address",
+                  "name": "addr",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "dec",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "address",
+                  "name": "clAddr",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "clDec",
+                  "type": "uint8"
+                }
+              ]
+            },
+            {
+              "internalType": "uint256",
+              "name": "_amount",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "tokenToEur",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "struct ITokenManager.Token",
+              "name": "_token",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "bytes32",
+                  "name": "symbol",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "address",
+                  "name": "addr",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "dec",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "address",
+                  "name": "clAddr",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "clDec",
+                  "type": "uint8"
+                }
+              ]
+            },
+            {
+              "internalType": "uint256",
+              "name": "_amount",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "tokenToEurAvg",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        ":@chainlink/=node_modules/@chainlink/",
+        ":@eth-optimism/=node_modules/@eth-optimism/",
+        ":@openzeppelin/=node_modules/@openzeppelin/",
+        ":ds-test/=lib/forge-std/lib/ds-test/src/",
+        ":eth-gas-reporter/=node_modules/eth-gas-reporter/",
+        ":forge-std/=lib/forge-std/src/",
+        ":hardhat/=node_modules/hardhat/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "contracts/interfaces/IPriceCalculator.sol": "IPriceCalculator"
+      },
+      "libraries": {},
+      "viaIR": true
+    },
+    "sources": {
+      "contracts/interfaces/IPriceCalculator.sol": {
+        "keccak256": "0xeef1faaa9471d88c4d4f9d765c5845aa1d15b9e9d6914119c8d185ccfab0a405",
+        "urls": [
+          "bzz-raw://73364c3f72d53ab903596c9f4bf9ba505bfcdae1cd0fc059ec6bdb373de524bb",
+          "dweb:/ipfs/QmP1sPjfGuCfKUdYwCAWGQzgdU8C1dWcVRMCJD3kvimucP"
+        ],
+        "license": "UNLICENSED"
+      },
+      "contracts/interfaces/ITokenManager.sol": {
+        "keccak256": "0x3f499d2b53e2ee06c42f1e748311878e568bc5cc7010bd3f48a0c51488f602c3",
+        "urls": [
+          "bzz-raw://8380d561c3964bd6ca329447ba85adc67b996809228d1b0fd859b77dce814f5b",
+          "dweb:/ipfs/QmVfFQkyjd48LLWggFCP6tsJyXjzX8x2fQJQobEvtferLk"
+        ],
+        "license": "GPL-3.0-or-later"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "contracts/interfaces/IPriceCalculator.sol",
+    "id": 4126,
+    "exportedSymbols": {
+      "IPriceCalculator": [
+        4125
+      ],
+      "ITokenManager": [
+        4370
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "40:443:9",
+    "nodes": [
+      {
+        "id": 4093,
+        "nodeType": "PragmaDirective",
+        "src": "40:23:9",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "0.8",
+          ".17"
+        ]
+      },
+      {
+        "id": 4094,
+        "nodeType": "ImportDirective",
+        "src": "67:48:9",
+        "nodes": [],
+        "absolutePath": "contracts/interfaces/ITokenManager.sol",
+        "file": "contracts/interfaces/ITokenManager.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 4126,
+        "sourceUnit": 4371,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 4125,
+        "nodeType": "ContractDefinition",
+        "src": "119:364:9",
+        "nodes": [
+          {
+            "id": 4104,
+            "nodeType": "FunctionDefinition",
+            "src": "153:107:9",
+            "nodes": [],
+            "functionSelector": "32ed2bf3",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tokenToEurAvg",
+            "nameLocation": "162:13:9",
+            "parameters": {
+              "id": 4100,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4097,
+                  "mutability": "mutable",
+                  "name": "_token",
+                  "nameLocation": "203:6:9",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4104,
+                  "src": "176:33:9",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Token_$4339_memory_ptr",
+                    "typeString": "struct ITokenManager.Token"
+                  },
+                  "typeName": {
+                    "id": 4096,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 4095,
+                      "name": "ITokenManager.Token",
+                      "nameLocations": [
+                        "176:13:9",
+                        "190:5:9"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 4339,
+                      "src": "176:19:9"
+                    },
+                    "referencedDeclaration": 4339,
+                    "src": "176:19:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Token_$4339_storage_ptr",
+                      "typeString": "struct ITokenManager.Token"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4099,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "219:7:9",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4104,
+                  "src": "211:15:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4098,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "211:7:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "175:52:9"
+            },
+            "returnParameters": {
+              "id": 4103,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4102,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4104,
+                  "src": "251:7:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4101,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "251:7:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "250:9:9"
+            },
+            "scope": 4125,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 4114,
+            "nodeType": "FunctionDefinition",
+            "src": "266:104:9",
+            "nodes": [],
+            "functionSelector": "d4d6c4e2",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tokenToEur",
+            "nameLocation": "275:10:9",
+            "parameters": {
+              "id": 4110,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4107,
+                  "mutability": "mutable",
+                  "name": "_token",
+                  "nameLocation": "313:6:9",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4114,
+                  "src": "286:33:9",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Token_$4339_memory_ptr",
+                    "typeString": "struct ITokenManager.Token"
+                  },
+                  "typeName": {
+                    "id": 4106,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 4105,
+                      "name": "ITokenManager.Token",
+                      "nameLocations": [
+                        "286:13:9",
+                        "300:5:9"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 4339,
+                      "src": "286:19:9"
+                    },
+                    "referencedDeclaration": 4339,
+                    "src": "286:19:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Token_$4339_storage_ptr",
+                      "typeString": "struct ITokenManager.Token"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4109,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "329:7:9",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4114,
+                  "src": "321:15:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4108,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "321:7:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "285:52:9"
+            },
+            "returnParameters": {
+              "id": 4113,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4112,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4114,
+                  "src": "361:7:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4111,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "361:7:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "360:9:9"
+            },
+            "scope": 4125,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 4124,
+            "nodeType": "FunctionDefinition",
+            "src": "376:104:9",
+            "nodes": [],
+            "functionSelector": "53d37212",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "eurToToken",
+            "nameLocation": "385:10:9",
+            "parameters": {
+              "id": 4120,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4117,
+                  "mutability": "mutable",
+                  "name": "_token",
+                  "nameLocation": "423:6:9",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4124,
+                  "src": "396:33:9",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Token_$4339_memory_ptr",
+                    "typeString": "struct ITokenManager.Token"
+                  },
+                  "typeName": {
+                    "id": 4116,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 4115,
+                      "name": "ITokenManager.Token",
+                      "nameLocations": [
+                        "396:13:9",
+                        "410:5:9"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 4339,
+                      "src": "396:19:9"
+                    },
+                    "referencedDeclaration": 4339,
+                    "src": "396:19:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Token_$4339_storage_ptr",
+                      "typeString": "struct ITokenManager.Token"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4119,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "439:7:9",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4124,
+                  "src": "431:15:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4118,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "431:7:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "395:52:9"
+            },
+            "returnParameters": {
+              "id": 4123,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4122,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4124,
+                  "src": "471:7:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4121,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "471:7:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "470:9:9"
+            },
+            "scope": 4125,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IPriceCalculator",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          4125
+        ],
+        "name": "IPriceCalculator",
+        "nameLocation": "129:16:9",
+        "scope": 4126,
+        "usedErrors": []
+      }
+    ],
+    "license": "UNLICENSED"
+  },
+  "id": 9
+}

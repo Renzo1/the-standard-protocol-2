@@ -6,4 +6,5 @@ interface ISmartVaultIndex {
     function getVaultAddress(uint256 _tokenId) external view returns (address payable);
     function addVaultAddress(uint256 _tokenId, address payable _vault) external;
     function transferTokenId(address _from, address _to, uint256 _tokenId) external;
+    function setVaultManager(address) external;
 }
