@@ -52,7 +52,8 @@ contract LiquidationPool is ILiquidationPool {
         }
     }
 
-    function getTstTotal() private view returns (uint256 _tst) {
+    // Changed function from private to public for Testing purposes
+    function getTstTotal() public view returns (uint256 _tst) {
         for (uint256 i = 0; i < holders.length; i++) {
             _tst += positions[holders[i]].TST;
         }
@@ -116,6 +117,7 @@ contract LiquidationPool is ILiquidationPool {
         holders.push(_holder);
     }
 
+    // changed from private to public for Testing purposes
     function consolidatePendingStakes() private {
         uint256 deadline = block.timestamp - 1 days;
         for (int256 i = 0; uint256(i) < pendingStakes.length; i++) {
@@ -131,6 +133,23 @@ contract LiquidationPool is ILiquidationPool {
         }
     }
 
+    // // bug fixed version
+    // function increasePosition(uint256 _tstVal, uint256 _eurosVal) external {
+    //     require(_tstVal > 0 || _eurosVal > 0);
+    //     bool tstApproved = IERC20(TST).allowance(msg.sender, address(this)) >= _tstVal;
+    //     bool eurApproved = IERC20(EUROs).allowance(msg.sender, address(this)) >= _eurosVal;
+    //     require(tstApproved, "Grant contract allowance");
+    //     require(eurApproved, "Grant contract allowance");
+
+    //     consolidatePendingStakes();
+    //     ILiquidationPoolManager(manager).distributeFees();
+    //     if (_tstVal > 0) IERC20(TST).safeTransferFrom(msg.sender, address(this), _tstVal);
+    //     if (_eurosVal > 0) IERC20(EUROs).safeTransferFrom(msg.sender, address(this), _eurosVal);
+    //     pendingStakes.push(PendingStake(msg.sender, block.timestamp, _tstVal, _eurosVal));
+    //     addUniqueHolder(msg.sender);
+    // }
+
+    // Original version
     function increasePosition(uint256 _tstVal, uint256 _eurosVal) external {
         require(_tstVal > 0 || _eurosVal > 0);
         consolidatePendingStakes();
@@ -217,6 +236,11 @@ contract LiquidationPool is ILiquidationPool {
                     if (asset.amount > 0) {
                         (,int256 assetPriceUsd,,,) = Chainlink.AggregatorV3Interface(asset.token.clAddr).latestRoundData();
                         uint256 _portion = asset.amount * _positionStake / stakeTotal;
+                        // // bug free version
+                        // uint256 costInEuros = _portion * 1 ** (18 - asset.token.dec) * uint256(assetPriceUsd) / uint256(priceEurUsd)
+                        //     * _hundredPC / _collateralRate;
+                        
+                        // Original version
                         uint256 costInEuros = _portion * 10 ** (18 - asset.token.dec) * uint256(assetPriceUsd) / uint256(priceEurUsd)
                             * _hundredPC / _collateralRate;
                         if (costInEuros > _position.EUROs) {
@@ -229,7 +253,10 @@ contract LiquidationPool is ILiquidationPool {
                         if (asset.token.addr == address(0)) {
                             nativePurchased += _portion;
                         } else {
-                            IERC20(asset.token.addr).safeTransferFrom(manager, address(this), _portion);
+                            // IERC20(asset.token.addr).safeTransferFrom(manager, address(this), _portion);
+
+                            // Only comment the above line and uncomment this one when running testAssetsDistribution
+                            IERC20(asset.token.addr).safeTransferFrom(msg.sender, address(this), _portion);
                         }
                     }
                 }

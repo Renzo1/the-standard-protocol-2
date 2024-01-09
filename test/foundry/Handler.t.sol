@@ -92,13 +92,13 @@ contract Handler is CommonBase, StdCheats, StdUtils, DSTest {
 
             // CultureIndex Util Set Up
             createCommunity(100, 1_000_000);
-            // createVaultOwners(9);
-            // testForDebugging();
-    }
-    
-    function testForDebugging() public{
             createVaultOwners(9);
     }
+    
+    // Sanity checks
+    // function testForDebugging() public{
+    //         createVaultOwners(9);
+    // }
 
     /////////////////////////////////////
     ////// Utility Functions Tests //////

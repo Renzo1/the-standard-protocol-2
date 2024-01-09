@@ -5,7 +5,7 @@ import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
-import "contracts/interfaces/INFTMetadataGenerator.sol";
+// import "contracts/interfaces/INFTMetadataGenerator.sol";
 import "contracts/interfaces/IEUROs.sol";
 import "contracts/interfaces/ISmartVault.sol";
 import "contracts/interfaces/ISmartVaultDeployer.sol";
@@ -42,7 +42,6 @@ contract MockSmartVaultManagerV5 is ISmartVaultManager, Initializable, ERC721Upg
         uint256 burnFeeRate; ISmartVault.Status status;
     }
 
-
     function initialize(uint256 _collateralRate, uint256 _feeRate, address _euros, address _protocol, address _liquidator, address _tokenManager, address _smartVaultDeployer, address _smartVaultIndex) initializer public {
         __ERC721_init("The Standard Smart Vault Manager", "TSVAULTMAN");
         __Ownable_init();
@@ -57,7 +56,6 @@ contract MockSmartVaultManagerV5 is ISmartVaultManager, Initializable, ERC721Upg
         burnFeeRate = _feeRate;
         // nftMetadataGenerator = _nftMetadataGenerator;
     }
-
 
     modifier onlyLiquidator {
         require(msg.sender == liquidator, "err-invalid-liquidator");

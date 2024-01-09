@@ -13,8 +13,8 @@
   },
   "files": {
     "contracts/LiquidationPool.sol": {
-      "lastModificationDate": 1703690163982,
-      "contentHash": "19c13bc24444446c31f72e88d7e50e5f",
+      "lastModificationDate": 1704774894417,
+      "contentHash": "e3423a3daa0b165a52f4f0003f69f281",
       "sourceName": "contracts/LiquidationPool.sol",
       "solcConfig": {
         "settings": {
@@ -67,7 +67,7 @@
       }
     },
     "contracts/LiquidationPoolManager.sol": {
-      "lastModificationDate": 1703690163982,
+      "lastModificationDate": 1704482785638,
       "contentHash": "dcd3b5c18b5ee48d90b2f32dba72d881",
       "sourceName": "contracts/LiquidationPoolManager.sol",
       "solcConfig": {
@@ -124,8 +124,8 @@
       }
     },
     "contracts/MockSmartVaultManagerV5.sol": {
-      "lastModificationDate": 1704062921467,
-      "contentHash": "53fcd2ff37132b69494a65a070cb1b07",
+      "lastModificationDate": 1704497656583,
+      "contentHash": "40e0e8c2eb2d3844309833f36067a00c",
       "sourceName": "contracts/MockSmartVaultManagerV5.sol",
       "solcConfig": {
         "settings": {
@@ -159,7 +159,6 @@
       },
       "imports": [
         "contracts\\interfaces\\IEUROs.sol",
-        "contracts\\interfaces\\INFTMetadataGenerator.sol",
         "contracts\\interfaces\\ISmartVault.sol",
         "contracts\\interfaces\\ISmartVaultDeployer.sol",
         "contracts\\interfaces\\ISmartVaultIndex.sol",
@@ -193,8 +192,8 @@
       }
     },
     "contracts/SmartVaultManagerV5.sol": {
-      "lastModificationDate": 1703690163982,
-      "contentHash": "875ca5a7af81f63d0fe381caa0ea54ed",
+      "lastModificationDate": 1704511392738,
+      "contentHash": "e77cd59b110ef3c8e767f8a968775ea2",
       "sourceName": "contracts/SmartVaultManagerV5.sol",
       "solcConfig": {
         "settings": {
@@ -262,8 +261,8 @@
       }
     },
     "contracts/SmartVaultV3.sol": {
-      "lastModificationDate": 1704324123271,
-      "contentHash": "8ec82d8dad390179356b0d67853eeba2",
+      "lastModificationDate": 1704804629391,
+      "contentHash": "fb71d9e8bb8e9be2ec9f1a2dc7727890",
       "sourceName": "contracts/SmartVaultV3.sol",
       "solcConfig": {
         "settings": {
@@ -667,8 +666,8 @@
       }
     },
     "contracts/interfaces/ISmartVaultManager.sol": {
-      "lastModificationDate": 1703690163985,
-      "contentHash": "b0bebfbc8179e89eda8a64bf0f1f1165",
+      "lastModificationDate": 1704515042665,
+      "contentHash": "b8eabfe9e215d658ecab1923b7e095ce",
       "sourceName": "contracts/interfaces/ISmartVaultManager.sol",
       "solcConfig": {
         "settings": {
@@ -3101,8 +3100,8 @@
       }
     },
     "test/foundry/Handler.t.sol": {
-      "lastModificationDate": 1704316912851,
-      "contentHash": "5cec055712169d4b56e377ae2438b777",
+      "lastModificationDate": 1704484831487,
+      "contentHash": "934c139b03bcc1128f842a0ddd26214e",
       "sourceName": "test/foundry/Handler.t.sol",
       "solcConfig": {
         "settings": {
@@ -3142,7 +3141,6 @@
         "contracts\\interfaces\\IEUROs.sol",
         "contracts\\interfaces\\ILiquidationPool.sol",
         "contracts\\interfaces\\ILiquidationPoolManager.sol",
-        "contracts\\interfaces\\INFTMetadataGenerator.sol",
         "contracts\\interfaces\\IPriceCalculator.sol",
         "contracts\\interfaces\\ISmartVault.sol",
         "contracts\\interfaces\\ISmartVaultDeployer.sol",
@@ -3266,7 +3264,6 @@
         "contracts\\interfaces\\IEUROs.sol",
         "contracts\\interfaces\\ILiquidationPool.sol",
         "contracts\\interfaces\\ILiquidationPoolManager.sol",
-        "contracts\\interfaces\\INFTMetadataGenerator.sol",
         "contracts\\interfaces\\IPriceCalculator.sol",
         "contracts\\interfaces\\ISmartVault.sol",
         "contracts\\interfaces\\ISmartVaultDeployer.sol",
@@ -3349,51 +3346,9 @@
         }
       }
     },
-    "test/foundry/LiquidationPool.t.sol": {
-      "lastModificationDate": 1703977822970,
-      "contentHash": "d41d8cd98f00b204e9800998ecf8427e",
-      "sourceName": "test/foundry/LiquidationPool.t.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "useLiteralContent": false,
-            "bytecodeHash": "ipfs",
-            "appendCBOR": true
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
-            }
-          },
-          "evmVersion": "paris",
-          "viaIR": true,
-          "libraries": {}
-        }
-      },
-      "imports": [],
-      "versionRequirement": null,
-      "artifacts": {
-        "LiquidationPool.t": {
-          "0.8.17+commit.8df45f5f.Windows.msvc": "LiquidationPool.t.sol\\LiquidationPool.t.json"
-        }
-      }
-    },
     "test/foundry/LiquidationPoolManager.t.sol": {
-      "lastModificationDate": 1703977842658,
-      "contentHash": "d41d8cd98f00b204e9800998ecf8427e",
+      "lastModificationDate": 1704523565490,
+      "contentHash": "2bc2eef3d1a5b3cdd20be4349518533c",
       "sourceName": "test/foundry/LiquidationPoolManager.t.sol",
       "solcConfig": {
         "settings": {
@@ -3425,18 +3380,224 @@
           "libraries": {}
         }
       },
-      "imports": [],
-      "versionRequirement": null,
+      "imports": [
+        "contracts\\LiquidationPool.sol",
+        "contracts\\LiquidationPoolManager.sol",
+        "contracts\\MockSmartVaultManagerV5.sol",
+        "contracts\\SmartVaultV3.sol",
+        "contracts\\interfaces\\IEUROs.sol",
+        "contracts\\interfaces\\ILiquidationPool.sol",
+        "contracts\\interfaces\\ILiquidationPoolManager.sol",
+        "contracts\\interfaces\\IPriceCalculator.sol",
+        "contracts\\interfaces\\ISmartVault.sol",
+        "contracts\\interfaces\\ISmartVaultDeployer.sol",
+        "contracts\\interfaces\\ISmartVaultIndex.sol",
+        "contracts\\interfaces\\ISmartVaultManager.sol",
+        "contracts\\interfaces\\ISmartVaultManagerV2.sol",
+        "contracts\\interfaces\\ISmartVaultManagerV3.sol",
+        "contracts\\interfaces\\ISwapRouter.sol",
+        "contracts\\interfaces\\ITokenManager.sol",
+        "contracts\\interfaces\\IWETH.sol",
+        "lib/forge-std/lib/ds-test/src\\test.sol",
+        "lib/forge-std/src\\Base.sol",
+        "lib/forge-std/src/StdAssertions.sol",
+        "lib/forge-std/src/StdChains.sol",
+        "lib/forge-std/src\\StdCheats.sol",
+        "lib/forge-std/src/StdError.sol",
+        "lib/forge-std/src/StdInvariant.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/StdMath.sol",
+        "lib/forge-std/src/StdStorage.sol",
+        "lib/forge-std/src/StdStyle.sol",
+        "lib/forge-std/src\\StdUtils.sol",
+        "lib/forge-std/src\\Test.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src\\console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/forge-std/src/interfaces/IMulticall3.sol",
+        "lib/forge-std/src/mocks/MockERC20.sol",
+        "lib/forge-std/src/mocks/MockERC721.sol",
+        "lib/forge-std/src/safeconsole.sol",
+        "node_modules/@chainlink\\contracts/src/v0.8/interfaces/AggregatorV3Interface.sol",
+        "node_modules/@openzeppelin\\contracts/access/AccessControl.sol",
+        "node_modules/@openzeppelin\\contracts/access/IAccessControl.sol",
+        "node_modules/@openzeppelin\\contracts/access/Ownable.sol",
+        "node_modules/@openzeppelin\\contracts/token/ERC20/ERC20.sol",
+        "node_modules/@openzeppelin\\contracts/token/ERC20/IERC20.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol",
+        "node_modules/@openzeppelin\\contracts/token/ERC20/utils/SafeERC20.sol",
+        "node_modules/@openzeppelin/contracts/utils/Address.sol",
+        "node_modules/@openzeppelin/contracts/utils/Context.sol",
+        "node_modules/@openzeppelin/contracts/utils/Strings.sol",
+        "node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol",
+        "node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol",
+        "node_modules/@openzeppelin/contracts/utils/math/Math.sol",
+        "node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol",
+        "node_modules/@openzeppelin\\contracts-upgradeable/access/OwnableUpgradeable.sol",
+        "node_modules/@openzeppelin\\contracts-upgradeable/proxy/utils/Initializable.sol",
+        "node_modules/@openzeppelin\\contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol",
+        "node_modules/@openzeppelin/contracts-upgradeable/token/ERC721/IERC721ReceiverUpgradeable.sol",
+        "node_modules/@openzeppelin/contracts-upgradeable/token/ERC721/IERC721Upgradeable.sol",
+        "node_modules/@openzeppelin/contracts-upgradeable/token/ERC721/extensions/IERC721MetadataUpgradeable.sol",
+        "node_modules/@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol",
+        "node_modules/@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol",
+        "node_modules/@openzeppelin/contracts-upgradeable/utils/StringsUpgradeable.sol",
+        "node_modules/@openzeppelin/contracts-upgradeable/utils/introspection/ERC165Upgradeable.sol",
+        "node_modules/@openzeppelin/contracts-upgradeable/utils/introspection/IERC165Upgradeable.sol",
+        "node_modules/@openzeppelin/contracts-upgradeable/utils/math/MathUpgradeable.sol",
+        "node_modules/@openzeppelin/contracts-upgradeable/utils/math/SignedMathUpgradeable.sol",
+        "test/foundry\\Handler.t.sol",
+        "test/foundry\\TSBuilder.t.sol",
+        "test/foundry\\interfaces\\AggregatorV3InterfaceForTest.sol",
+        "test/foundry\\interfaces\\IERC20Mock.sol",
+        "test/foundry\\interfaces\\ILiquidationPool.sol",
+        "test/foundry\\interfaces\\ILiquidationPoolManager.sol",
+        "test/foundry\\interfaces\\ISmartVault.sol",
+        "test/foundry\\interfaces\\ISmartVaultManagerV5.sol",
+        "utils/ChainlinkMockForTest.sol",
+        "utils/ERC20Mock.sol",
+        "utils/EUROsMock.sol",
+        "utils/PriceCalculator.sol",
+        "utils/SmartVaultDeployerV3.sol",
+        "utils/SmartVaultIndex.sol",
+        "utils/TokenManagerMock.sol"
+      ],
+      "versionRequirement": "^0.8.17",
       "artifacts": {
-        "LiquidationPoolManager.t": {
-          "0.8.17+commit.8df45f5f.Windows.msvc": "LiquidationPoolManager.t.sol\\LiquidationPoolManager.t.json"
+        "SmartVaultManagerTest": {
+          "0.8.17+commit.8df45f5f.Windows.msvc": "LiquidationPoolManager.t.sol\\SmartVaultManagerTest.json"
         }
       }
     },
-    "test/foundry/SmartVaultManager.t.sol": {
-      "lastModificationDate": 1703977867419,
+    "test/foundry/LiquidationPoolTests.t.sol": {
+      "lastModificationDate": 1704816698070,
+      "contentHash": "9870cd172a6f81290d0a4b4dfcc8f2fe",
+      "sourceName": "test/foundry/LiquidationPoolTests.t.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "contracts\\LiquidationPool.sol",
+        "contracts\\LiquidationPoolManager.sol",
+        "contracts\\MockSmartVaultManagerV5.sol",
+        "contracts\\SmartVaultV3.sol",
+        "contracts\\interfaces\\IEUROs.sol",
+        "contracts\\interfaces\\ILiquidationPool.sol",
+        "contracts\\interfaces\\ILiquidationPoolManager.sol",
+        "contracts\\interfaces\\IPriceCalculator.sol",
+        "contracts\\interfaces\\ISmartVault.sol",
+        "contracts\\interfaces\\ISmartVaultDeployer.sol",
+        "contracts\\interfaces\\ISmartVaultIndex.sol",
+        "contracts\\interfaces\\ISmartVaultManager.sol",
+        "contracts\\interfaces\\ISmartVaultManagerV2.sol",
+        "contracts\\interfaces\\ISmartVaultManagerV3.sol",
+        "contracts\\interfaces\\ISwapRouter.sol",
+        "contracts\\interfaces\\ITokenManager.sol",
+        "contracts\\interfaces\\IWETH.sol",
+        "lib/forge-std/lib/ds-test/src\\test.sol",
+        "lib/forge-std/src\\Base.sol",
+        "lib/forge-std/src/StdAssertions.sol",
+        "lib/forge-std/src/StdChains.sol",
+        "lib/forge-std/src\\StdCheats.sol",
+        "lib/forge-std/src/StdError.sol",
+        "lib/forge-std/src/StdInvariant.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/StdMath.sol",
+        "lib/forge-std/src/StdStorage.sol",
+        "lib/forge-std/src/StdStyle.sol",
+        "lib/forge-std/src\\StdUtils.sol",
+        "lib/forge-std/src\\Test.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src\\console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/forge-std/src/interfaces/IMulticall3.sol",
+        "lib/forge-std/src/mocks/MockERC20.sol",
+        "lib/forge-std/src/mocks/MockERC721.sol",
+        "lib/forge-std/src/safeconsole.sol",
+        "node_modules/@chainlink\\contracts/src/v0.8/interfaces/AggregatorV3Interface.sol",
+        "node_modules/@openzeppelin\\contracts/access/AccessControl.sol",
+        "node_modules/@openzeppelin\\contracts/access/IAccessControl.sol",
+        "node_modules/@openzeppelin\\contracts/access/Ownable.sol",
+        "node_modules/@openzeppelin\\contracts/token/ERC20/ERC20.sol",
+        "node_modules/@openzeppelin\\contracts/token/ERC20/IERC20.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol",
+        "node_modules/@openzeppelin\\contracts/token/ERC20/utils/SafeERC20.sol",
+        "node_modules/@openzeppelin/contracts/utils/Address.sol",
+        "node_modules/@openzeppelin/contracts/utils/Context.sol",
+        "node_modules/@openzeppelin/contracts/utils/Strings.sol",
+        "node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol",
+        "node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol",
+        "node_modules/@openzeppelin/contracts/utils/math/Math.sol",
+        "node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol",
+        "node_modules/@openzeppelin\\contracts-upgradeable/access/OwnableUpgradeable.sol",
+        "node_modules/@openzeppelin\\contracts-upgradeable/proxy/utils/Initializable.sol",
+        "node_modules/@openzeppelin\\contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol",
+        "node_modules/@openzeppelin/contracts-upgradeable/token/ERC721/IERC721ReceiverUpgradeable.sol",
+        "node_modules/@openzeppelin/contracts-upgradeable/token/ERC721/IERC721Upgradeable.sol",
+        "node_modules/@openzeppelin/contracts-upgradeable/token/ERC721/extensions/IERC721MetadataUpgradeable.sol",
+        "node_modules/@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol",
+        "node_modules/@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol",
+        "node_modules/@openzeppelin/contracts-upgradeable/utils/StringsUpgradeable.sol",
+        "node_modules/@openzeppelin/contracts-upgradeable/utils/introspection/ERC165Upgradeable.sol",
+        "node_modules/@openzeppelin/contracts-upgradeable/utils/introspection/IERC165Upgradeable.sol",
+        "node_modules/@openzeppelin/contracts-upgradeable/utils/math/MathUpgradeable.sol",
+        "node_modules/@openzeppelin/contracts-upgradeable/utils/math/SignedMathUpgradeable.sol",
+        "test/foundry\\Handler.t.sol",
+        "test/foundry\\TSBuilder.t.sol",
+        "test/foundry\\interfaces\\AggregatorV3InterfaceForTest.sol",
+        "test/foundry\\interfaces\\IERC20Mock.sol",
+        "test/foundry\\interfaces\\ILiquidationPool.sol",
+        "test/foundry\\interfaces\\ILiquidationPoolManager.sol",
+        "test/foundry\\interfaces\\ISmartVault.sol",
+        "test/foundry\\interfaces\\ISmartVaultManagerV5.sol",
+        "utils/ChainlinkMockForTest.sol",
+        "utils/ERC20Mock.sol",
+        "utils/EUROsMock.sol",
+        "utils/PriceCalculator.sol",
+        "utils/SmartVaultDeployerV3.sol",
+        "utils/SmartVaultIndex.sol",
+        "utils/TokenManagerMock.sol"
+      ],
+      "versionRequirement": "^0.8.17",
+      "artifacts": {
+        "LiquidationPoolTests": {
+          "0.8.17+commit.8df45f5f.Windows.msvc": "LiquidationPoolTests.t.sol\\LiquidationPoolTests.json"
+        }
+      }
+    },
+    "test/foundry/SmartVaultManagerTest.t.sol": {
+      "lastModificationDate": 1704458692635,
       "contentHash": "d41d8cd98f00b204e9800998ecf8427e",
-      "sourceName": "test/foundry/SmartVaultManager.t.sol",
+      "sourceName": "test/foundry/SmartVaultManagerTest.t.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
@@ -3470,14 +3631,14 @@
       "imports": [],
       "versionRequirement": null,
       "artifacts": {
-        "SmartVaultManager.t": {
-          "0.8.17+commit.8df45f5f.Windows.msvc": "SmartVaultManager.t.sol\\SmartVaultManager.t.json"
+        "SmartVaultManagerTest.t": {
+          "0.8.17+commit.8df45f5f.Windows.msvc": "SmartVaultManagerTest.t.sol\\SmartVaultManagerTest.t.json"
         }
       }
     },
     "test/foundry/SmartVaultTest.t.sol": {
-      "lastModificationDate": 1704326868325,
-      "contentHash": "c71fb23f04e9480b41b44a9b18c158da",
+      "lastModificationDate": 1704522102905,
+      "contentHash": "b5628216511df203157b2985fed03fcf",
       "sourceName": "test/foundry/SmartVaultTest.t.sol",
       "solcConfig": {
         "settings": {
@@ -3517,7 +3678,6 @@
         "contracts\\interfaces\\IEUROs.sol",
         "contracts\\interfaces\\ILiquidationPool.sol",
         "contracts\\interfaces\\ILiquidationPoolManager.sol",
-        "contracts\\interfaces\\INFTMetadataGenerator.sol",
         "contracts\\interfaces\\IPriceCalculator.sol",
         "contracts\\interfaces\\ISmartVault.sol",
         "contracts\\interfaces\\ISmartVaultDeployer.sol",
@@ -3601,8 +3761,8 @@
       }
     },
     "test/foundry/TSBuilder.t.sol": {
-      "lastModificationDate": 1704296860260,
-      "contentHash": "09c4d09ca95f125d3ef9f62f45a174e8",
+      "lastModificationDate": 1704764032324,
+      "contentHash": "7d21a9df813f1eae5adae264d6133530",
       "sourceName": "test/foundry/TSBuilder.t.sol",
       "solcConfig": {
         "settings": {
@@ -3642,7 +3802,6 @@
         "contracts\\interfaces\\IEUROs.sol",
         "contracts\\interfaces\\ILiquidationPool.sol",
         "contracts\\interfaces\\ILiquidationPoolManager.sol",
-        "contracts\\interfaces\\INFTMetadataGenerator.sol",
         "contracts\\interfaces\\IPriceCalculator.sol",
         "contracts\\interfaces\\ISmartVault.sol",
         "contracts\\interfaces\\ISmartVaultDeployer.sol",
@@ -3808,8 +3967,8 @@
       }
     },
     "test/foundry/interfaces/ILiquidationPool.sol": {
-      "lastModificationDate": 1704031249006,
-      "contentHash": "92a68c1004656154d284de4d6080c01d",
+      "lastModificationDate": 1704499864952,
+      "contentHash": "2c1e7c4edcfac47b9a29345f5f280db6",
       "sourceName": "test/foundry/interfaces/ILiquidationPool.sol",
       "solcConfig": {
         "settings": {
@@ -3941,8 +4100,8 @@
       }
     },
     "test/foundry/interfaces/ISmartVaultManagerV5.sol": {
-      "lastModificationDate": 1704150056976,
-      "contentHash": "cc04a3aa531584b40003b2ae875468d2",
+      "lastModificationDate": 1704434715856,
+      "contentHash": "5d5e4cab4cf30b041a423d0d499e16f9",
       "sourceName": "test/foundry/interfaces/ISmartVaultManagerV5.sol",
       "solcConfig": {
         "settings": {
@@ -4129,8 +4288,8 @@
       }
     },
     "utils/PriceCalculator.sol": {
-      "lastModificationDate": 1704209190591,
-      "contentHash": "5650a5a14af4eb90fdcd65ec9d564557",
+      "lastModificationDate": 1704385173971,
+      "contentHash": "ccdc44c85cf88bc42fefc6c343ffd1d3",
       "sourceName": "utils/PriceCalculator.sol",
       "solcConfig": {
         "settings": {

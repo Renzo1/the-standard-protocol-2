@@ -1,0 +1,20 @@
+{
+  "abi": [],
+  "bytecode": {
+    "object": "0x",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "linkReferences": {}
+  },
+  "ast": {
+    "absolutePath": "test/foundry/SmartVaultManagerTest.t.sol",
+    "id": 58616,
+    "exportedSymbols": {},
+    "nodeType": "SourceUnit",
+    "src": "0:0:69",
+    "nodes": []
+  },
+  "id": 69
+}

@@ -89,15 +89,18 @@ contract TSBuilder is Test {
 
     struct Asset { Token token; uint256 amount; }
 
-    struct VaultForTest { address owner; address vaultAddr; uint256 id;}
+    // struct VaultForTest { address owner; address vaultAddr; uint256 id;}
 
     function setUp() public virtual {
         owner = vm.addr(420420);
         bytes32 _native = bytes32(abi.encodePacked("ETH"));
         native = _native;
         treasury = payable(vm.addr(11022033));
+        // It wasn't clear whether protocol was pointing to treasury from the docs
+        // but I took it so. Reason is in finding
+        protocol = treasury;
 
-
+        // deploy Network Assets
         vm.startPrank(owner);
         tst_ = address(new ERC20Mock("TST", "TST", 18));
         wbtc_ = address(new ERC20Mock("WBTC", "WBTC", 8));
@@ -107,6 +110,7 @@ contract TSBuilder is Test {
         WBTC = IERC20Mock(wbtc_);
         PAXG = IERC20Mock(paxg_);
 
+        // deploy Price Oracles for Assets
         clNativeUsd = address(new ChainlinkMockForTest("ETH / USD"));
         clEurUsd = address(new ChainlinkMockForTest("EUR / USD"));
         clBtcUsd = address(new ChainlinkMockForTest("WBTC / USD"));
@@ -117,41 +121,46 @@ contract TSBuilder is Test {
         clBtcUsdPrice = AggregatorV3InterfaceForTest(clBtcUsd);
         clPaxgUsdPrice = AggregatorV3InterfaceForTest(clPaxgUsd);
 
+        // deploy tokenManager
         tokenManager = address(new TokenManagerMock(native, address(clNativeUsd)));
+        tokenManagerContract = ITokenManager(tokenManager);
+
+        // deploy smartVaultDeployer
         smartVaultDeployer = address(new SmartVaultDeployerV3(native, clEurUsd));
 
-        tokenManagerContract = ITokenManager(tokenManager);
+        // deploy smartVaultIndex
+        smartVaultIndex = address(new SmartVaultIndex());
+        smartVaultIndexContract = ISmartVaultIndex(smartVaultIndex);
 
         // deploy SmartVaultManager
         SmartVaultManager = address(new MockSmartVaultManagerV5());
         vm.stopPrank();
-        
+
         vm.startPrank(SmartVaultManager);
         euros_ = address(new EUROsMock());
         EUROs = IEUROs(euros_);
-
-        smartVaultIndex = address(new SmartVaultIndex());
-        smartVaultIndexContract = ISmartVaultIndex(smartVaultIndex);
-        smartVaultIndexContract.setVaultManager(SmartVaultManager);
         vm.stopPrank();
 
         vm.startPrank(owner);
+        liquidator = address(0); // use random address cause liquidationPoolManager hasn't been deployed yet
+        SmartVaultManagerContract = ISmartVaultManagerV5(SmartVaultManager);
+        // initialize SmartVaultManager
+        SmartVaultManagerContract.initialize(collateralRate, feeRate, euros_, protocol, liquidator, tokenManager, smartVaultDeployer, smartVaultIndex);
+        //  _liquidator
+
         // deploy LiquidationPoolManager
         liquidationPoolManager = address(new LiquidationPoolManager(tst_, euros_, SmartVaultManager, clEurUsd, treasury, poolFeePercentage));
+        // update liquidator to liquidationPoolManager once it's deployed
         liquidator = liquidationPoolManager;
-        protocol = liquidationPoolManager;
-        
-        // initialize SmartVaultManager
-        SmartVaultManagerContract = ISmartVaultManagerV5(SmartVaultManager);
-        SmartVaultManagerContract.initialize(collateralRate, feeRate, euros_, protocol, liquidator, tokenManager, smartVaultDeployer, smartVaultIndex);
+        SmartVaultManagerContract.setLiquidatorAddress(liquidator);
+
+        smartVaultIndexContract.setVaultManager(SmartVaultManager);
 
         // Set pool variable
         liquidationPoolManagerContract = ILiquidationPoolManager(liquidationPoolManager);
         pool = liquidationPoolManagerContract.pool();
         liquidationPool = ILiquidationPool(pool);
-        
         vm.stopPrank();
-
     }
 
     ///                                                                                ///
@@ -218,14 +227,13 @@ contract TSBuilder is Test {
         return user;
     }
 
-    function createVaultOwners(uint256 _numOfOwners) public returns(VaultForTest[] memory) {
+    function createVaultOwners(uint256 _numOfOwners) public returns(ISmartVault[] memory) {
         address owner;
         address vaultAddr;
         uint256 tokenId;
         ISmartVault vault;
-        VaultForTest memory vaultForTest;
 
-        VaultForTest[] memory vaults = new VaultForTest[](_numOfOwners);
+        ISmartVault[] memory vaults = new ISmartVault[](_numOfOwners);
         
 
         for (uint256 j = 0; j < _numOfOwners; j++) {
@@ -246,14 +254,10 @@ contract TSBuilder is Test {
             // Max mintable = euroCollateral() * HUNDRED_PC / collateralRate
             // Max mintable = 76,107 * 100000/110000 = 69,188 @ $1.1037 eurusd price
 
-            // vault.mint(owner, 55_350 * 1e18); //69,188 * 80%
+            vault.mint(owner, 55_350 * 1e18); //69,188 * 80%
             vm.stopPrank();
 
-            vaultForTest.owner = owner;
-            vaultForTest.vaultAddr = vaultAddr;
-            vaultForTest.id = tokenId;
-
-            vaults[j] = vaultForTest;
+            vaults[j] = vault;
         }
         return vaults;
     }

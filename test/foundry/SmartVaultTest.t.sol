@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.17;
 
 import "./TSBuilder.t.sol";
@@ -7,8 +8,6 @@ import "./Handler.t.sol";
 contract SmartVaultTest is TSBuilder {
     address user;
     ISmartVault vault;
-    
-    // struct VaultForTest { address owner; address vaultAddr; uint256 id;}
 
     function setUp() public override {
         super.setUp();
@@ -23,9 +22,9 @@ contract SmartVaultTest is TSBuilder {
     Test Liquidation State Persistence
     Test Liquidation Effects on EUROs Minting
     */
-    // feel free to ignore all sanity checks. They merely debugging tools
+    // feel free to ignore all sanity checks. They are merely debugging tools
     // Note: Ideally all assertions should have their own tests. 
-    // I have cramped up multiple tests in this function to save time
+    // I have cramped up multiple tests into this function to save time
     function testLiquidateUndercollateralisedVault(
         uint256 _amount,  
         uint256 _eurusd,  
@@ -40,19 +39,18 @@ contract SmartVaultTest is TSBuilder {
         _btcPrice = bound(_btcPrice, 14000, 100000);
         _paxgPrice = bound(_paxgPrice, 700, 7000);
 
-        VaultForTest[] memory vaults = new VaultForTest[](1);
+        ISmartVault[] memory vaults = new ISmartVault[](1);
         vaults = createVaultOwners(1);
 
-        address owner = vaults[0].owner;
-        address vaultAddr = vaults[0].vaultAddr;
-        uint256 vaultId = vaults[0].id;
-
-        ISmartVault vault = ISmartVault(vaults[0].vaultAddr);
+        ISmartVault vault = vaults[0];
         ISmartVault.Status memory oldStatus = vault.status();
+        address owner = vault.owner();
         uint256 oldMinted = oldStatus.minted;
         uint256 oldMaxMintable = oldStatus.maxMintable;
         // uint256 oldTotalCollateralValue = oldStatus.totalCollateralValue;
         // bool oldLiquidated = oldStatus.liquidated;
+
+        address vaultAddr = address(vault);
 
         // Ensures no EUROs has been minted
         // i.e. mint vault.mint() in TSBuilder::createVaultOwners is commented out
@@ -64,8 +62,6 @@ contract SmartVaultTest is TSBuilder {
 
 
         // Bug mint revert if _amount == maxMintable -- fixed!
-
-        assertEq(vaultAddr, oldStatus.vaultAddress);
 
         vm.startPrank(owner);
         vault.mint(owner, _amount);
@@ -80,11 +76,11 @@ contract SmartVaultTest is TSBuilder {
         // console.log("Max mintable: ", oldMaxMintable);
         // console.log("EUROs minted: ", oldMinted);
 
-        // // starting prices: EUR/USD $11037; ETH/USD $2200; BTC/USD $42000; PAXGUSD $2000
+        // starting prices: EUR/USD $11037; ETH/USD $2200; BTC/USD $42000; PAXGUSD $2000
         setPriceAndTime( _eurusd, _ethPrice, _btcPrice, _paxgPrice); // fuzz this with reasonable bounds
 
         // calculate collateral value in eur and max mintable
-        uint256 nativeCollateralUsd = vaultAddr.balance * _ethPrice * 1e8 * 1e0; // balanc * priceUsd * 18 - decimal
+        uint256 nativeCollateralUsd = vaultAddr.balance * _ethPrice * 1e8 * 1e0; // balance * priceUsd * 18 - decimal
         uint256 nativeBalanceEur =  nativeCollateralUsd  / (_eurusd * 1e4);
         uint256 wbtcCollateralUsd = WBTC.balanceOf(vaultAddr) * _btcPrice * 1e8 * 1e10;
         uint256 wbtcBalanceEur = wbtcCollateralUsd / (_eurusd * 1e4);
@@ -257,73 +253,104 @@ contract SmartVaultTest is TSBuilder {
         uint256 _mintAmount,
         uint256 _burnAmount
         ) public {
-        VaultForTest[] memory vaults = new VaultForTest[](1);
+        ISmartVault[] memory vaults = new ISmartVault[](1);
         vaults = createVaultOwners(1);
 
-        address owner = vaults[0].owner;
-        address vaultAddr = vaults[0].vaultAddr;
+        ISmartVault vault = vaults[0];
+        address vaultAddr = address(vault);
 
-        ISmartVault vault = ISmartVault(vaults[0].vaultAddr);
         ISmartVault.Status memory oldStatus = vault.status();
+        address owner = vault.owner();
         uint256 minted = oldStatus.minted;
         uint256 maxMintable = oldStatus.maxMintable;
+
 
         // Ensures no EUROs has been minted
         // i.e. mint vault.mint() in TSBuilder::createVaultOwners is commented out
         assertEq(minted, 0);
 
-        _mintAmount = bound(_mintAmount, 1, maxMintable);
+        // 0 reverts -- not a bug
+        _mintAmount = bound(_mintAmount, 1, maxMintable); 
+
+        // factor in fee when testing the buggy version of the contract. ref: testLiquidateUndercollateralisedVault
+        // Else the mint will throw error at _mintAmount == maxMintable
+        uint256 fee = _mintAmount * feeRate / SmartVaultManagerContract.HUNDRED_PC();
+        _mintAmount = _mintAmount - fee;
 
         vm.startPrank(owner);
         vault.mint(owner, _mintAmount);
         vm.stopPrank();
 
-        ISmartVault.Status memory newStatus = vault.status();
-        _burnAmount = bound(_burnAmount, 1, newStatus.minted);
-
-        // factor in fee when test the bug fixed version of the contract. ref: testLiquidateUndercollateralisedVault
-        // uint256 fee = _mintAmount * feeRate / SmartVaultManagerContract.HUNDRED_PC();
-        // _mintAmount = _mintAmount - fee;
-
-        // Bug burn reverts if _burnAmount == _mintAmount i.e.  EUROs.balanceOf(owner) -- fixed! 
-
         assertEq(_mintAmount, EUROs.balanceOf(owner));
+
+        // 0 or >EUROs.balanceOf(owner) reverts -- not a bug
+        _burnAmount = bound(_burnAmount, 1, EUROs.balanceOf(owner)); 
+
+
+        // Bug 1 burn reverts if _burnAmount == _mintAmount i.e.  EUROs.balanceOf(owner) -- fixed!
+        // Users can't burn all their tokens
+        // Bug 2: No contract doesn't have approval to transfer users token
+
 
         // Fails (ERC20: burn amount exceeds balance Counter) for the original contract
         // Passes for bug fixed version
 
+        // _burnAmount = _mintAmount - fee;
+        
+        vm.startPrank(owner);
+        EUROs.approve(vaultAddr, _burnAmount);
         vault.burn(_burnAmount);
+        vm.stopPrank();
 
         assertEq(EUROs.balanceOf(owner), _mintAmount - _burnAmount);
     }
 
-    function testCantBurnAllMinted(
-        uint256 _mintAmount
+    // This test fail with a ___ error
+    // Not it doesn't revert, ergo, vm.expectRevert wouldn't catch it
+    function testBurnThrowsError(
+        uint256 _mintAmount,
+        uint256 _burnAmount
         ) public {
-        VaultForTest[] memory vaults = new VaultForTest[](1);
+        ISmartVault[] memory vaults = new ISmartVault[](1);
         vaults = createVaultOwners(1);
 
-        address owner = vaults[0].owner;
-        address vaultAddr = vaults[0].vaultAddr;
+        ISmartVault vault = vaults[0];
+        address vaultAddr = address(vault);
 
-        ISmartVault vault = ISmartVault(vaults[0].vaultAddr);
         ISmartVault.Status memory oldStatus = vault.status();
+        address owner = vault.owner();
         uint256 minted = oldStatus.minted;
         uint256 maxMintable = oldStatus.maxMintable;
+
 
         // Ensures no EUROs has been minted
         // i.e. mint vault.mint() in TSBuilder::createVaultOwners is commented out
         assertEq(minted, 0);
 
-        _mintAmount = bound(_mintAmount, 1, maxMintable);
+        // 0 reverts -- not a bug
+        _mintAmount = bound(_mintAmount, 1, maxMintable); 
+
+        // factor in fee when testing the buggy version of the contract. ref: testLiquidateUndercollateralisedVault
+        // Else the mint will throw error at _mintAmount == maxMintable
+        uint256 fee = _mintAmount * feeRate / SmartVaultManagerContract.HUNDRED_PC();
+        uint256 _mintAmount2 = _mintAmount - fee;
 
         vm.startPrank(owner);
-        vault.mint(owner, _mintAmount);
+        vault.mint(owner, _mintAmount2);
         vm.stopPrank();
 
-        ISmartVault.Status memory newStatus = vault.status();
+        assertEq(_mintAmount2, EUROs.balanceOf(owner));
 
-        vm.expectRevert();
-        vault.burn(EUROs.balanceOf(owner));
+        // 0 or >EUROs.balanceOf(owner) reverts -- not a bug
+        _burnAmount = bound(_burnAmount, 1, EUROs.balanceOf(owner));
+
+        uint256 _burnFee = _burnAmount * feeRate / SmartVaultManagerContract.HUNDRED_PC();
+        
+        vm.startPrank(owner);
+        EUROs.approve(vaultAddr, _burnAmount);
+        vault.burn(_burnAmount - _burnFee);
+        vm.stopPrank();
+
+        // assertEq(EUROs.balanceOf(owner), _mintAmount - _burnAmount);
     }
 }

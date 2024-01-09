@@ -31,8 +31,10 @@ interface ISmartVaultManagerV5 {
 
     function vaults() external view returns (SmartVaultData[] memory);
     function mint() external returns (address, uint256);
-    function liquidateVault(uint256 _tokenId) external;
+    function liquidateVault(uint256) external;
     function totalSupply() external view returns (uint256);
     function setLiquidatorAddress(address) external;
     function setProtocolAddress(address) external;
+
+    // function grantPoolBurnRole(address) external;
 }

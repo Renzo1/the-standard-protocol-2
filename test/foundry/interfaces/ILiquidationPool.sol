@@ -23,4 +23,10 @@ interface ILiquidationPool {
 
     function distributeAssets(ILiquidationPoolManager.Asset[] memory, uint256, uint256) external payable;
 
+    function getTstTotal() external view returns (uint256);
+
+    // For test 
+    function consolidatePendingStakes() external;
+
+    // function findRewards(address) external view returns (Reward[] memory);
 }

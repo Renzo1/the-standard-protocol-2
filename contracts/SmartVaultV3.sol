@@ -100,16 +100,31 @@ contract SmartVaultV3 is ISmartVault {
         return minted > maxMintable();
     }
 
+    // Bug free version
     function liquidateNative() private {
         if (address(this).balance != 0) {
-            (bool sent,) = payable(ISmartVaultManagerV3(manager).protocol()).call{value: address(this).balance}("");
+            (bool sent,) = payable(ISmartVaultManagerV3(manager).liquidator()).call{value: address(this).balance}("");
             require(sent, "err-native-liquidate");
         }
     }
 
+    // // Original version
+    // function liquidateNative() private {
+    //     if (address(this).balance != 0) {
+    //         (bool sent,) = payable(ISmartVaultManagerV3(manager).protocol()).call{value: address(this).balance}("");
+    //         require(sent, "err-native-liquidate");
+    //     }
+    // }
+
+    // Bug free version
     function liquidateERC20(IERC20 _token) private {
-        if (_token.balanceOf(address(this)) != 0) _token.safeTransfer(ISmartVaultManagerV3(manager).protocol(), _token.balanceOf(address(this)));
+        if (_token.balanceOf(address(this)) != 0) _token.safeTransfer(ISmartVaultManagerV3(manager).liquidator(), _token.balanceOf(address(this)));
     }
+
+    // // Original version
+    // function liquidateERC20(IERC20 _token) private {
+    //     if (_token.balanceOf(address(this)) != 0) _token.safeTransfer(ISmartVaultManagerV3(manager).protocol(), _token.balanceOf(address(this)));
+    // }
 
     function liquidate() external onlyVaultManager {
         require(undercollateralised(), "err-not-liquidatable");
@@ -157,7 +172,7 @@ contract SmartVaultV3 is ISmartVault {
         return minted + _amount <= maxMintable();
     }
 
-    /*Bug Fix: 
+    /*Bug free version 
     catch: mint revert if _amount == maxMintable
     Solution: change the following line in SmartVaultV3
     require(fullyCollateralised(_amount + fee), UNDER_COLL); 
@@ -169,33 +184,42 @@ contract SmartVaultV3 is ISmartVault {
     emit EUROsMinted(_to, _amount, fee);
     to: emit EUROsMinted(_to, _amount - fee, fee);
 -   */
-    // function mint(address _to, uint256 _amount) external onlyOwner ifNotLiquidated {
-    //     uint256 fee = _amount * ISmartVaultManagerV3(manager).mintFeeRate() / ISmartVaultManagerV3(manager).HUNDRED_PC();
-    //     require(fullyCollateralised(_amount), UNDER_COLL);
-    //     minted = minted + _amount;
-    //     EUROs.mint(_to, _amount - fee);
-    //     EUROs.mint(ISmartVaultManagerV3(manager).protocol(), fee);
-    //     emit EUROsMinted(_to, _amount - fee, fee);
-    // }
-
-    // original version
     function mint(address _to, uint256 _amount) external onlyOwner ifNotLiquidated {
         uint256 fee = _amount * ISmartVaultManagerV3(manager).mintFeeRate() / ISmartVaultManagerV3(manager).HUNDRED_PC();
-        require(fullyCollateralised(_amount + fee), UNDER_COLL);
-        minted = minted + _amount + fee;
-        EUROs.mint(_to, _amount);
-        EUROs.mint(ISmartVaultManagerV3(manager).protocol(), fee);
-        emit EUROsMinted(_to, _amount, fee);
+        require(fullyCollateralised(_amount), UNDER_COLL);
+        minted = minted + _amount;
+        EUROs.mint(_to, _amount - fee);
+        EUROs.mint(ISmartVaultManagerV3(manager).liquidator(), fee);
+        emit EUROsMinted(_to, _amount - fee, fee);
     }
 
-    // Bug fixed version
+    // original version
+    // function mint(address _to, uint256 _amount) external onlyOwner ifNotLiquidated {
+    //     uint256 fee = _amount * ISmartVaultManagerV3(manager).mintFeeRate() / ISmartVaultManagerV3(manager).HUNDRED_PC();
+    //     require(fullyCollateralised(_amount + fee), UNDER_COLL);
+    //     minted = minted + _amount + fee;
+    //     EUROs.mint(_to, _amount);
+    //     EUROs.mint(ISmartVaultManagerV3(manager).protocol(), fee);
+    //     emit EUROsMinted(_to, _amount, fee);
+    // }
+
+    // Bug free version
     // Changed EUROs.burn(msg.sender, _amount);
     // to: EUROs.burn(msg.sender, _amount - fee);
+    // add approval for contract to spend msg.sender's tokens
+
     // function burn(uint256 _amount) external ifMinted(_amount) {
+    //     bool eurApproved = IERC20(EUROs).allowance(msg.sender, address(this)) >= _amount;
+    //     require(eurApproved, "Grant contract allowance");
+
     //     uint256 fee = _amount * ISmartVaultManagerV3(manager).burnFeeRate() / ISmartVaultManagerV3(manager).HUNDRED_PC();
     //     minted = minted - _amount;
     //     EUROs.burn(msg.sender, _amount - fee);
-    //     IERC20(address(EUROs)).safeTransferFrom(msg.sender, ISmartVaultManagerV3(manager).protocol(), fee);
+    //     (bool success,) = address(EUROs).delegatecall(abi.encodeWithSignature("approve(address,uint256)",address(this),fee));
+    //     require(success, "Delegatecall failed");
+    //     IERC20(address(EUROs)).safeTransferFrom(msg.sender, ISmartVaultManagerV3(manager).liquidator(), fee);
+
+    //     // Emit an event to alert users to reset their allowance
     //     emit EUROsBurned(_amount, fee);
     // }
 
@@ -221,12 +245,32 @@ contract SmartVaultV3 is ISmartVault {
         return _token.addr == address(0) ? ISmartVaultManagerV3(manager).weth() : _token.addr;
     }
 
+    // // Bug free version
+    // function executeNativeSwapAndFee(ISwapRouter.ExactInputSingleParams memory _params, uint256 _swapFee) private {
+    //     (bool sent,) = payable(ISmartVaultManagerV3(manager).liquidator()).call{value: _swapFee}("");
+    //     require(sent, "err-swap-fee-native");
+    //     ISwapRouter(ISmartVaultManagerV3(manager).swapRouter2()).exactInputSingle{value: _params.amountIn}(_params);
+    // }
+
+    // Original version
     function executeNativeSwapAndFee(ISwapRouter.ExactInputSingleParams memory _params, uint256 _swapFee) private {
         (bool sent,) = payable(ISmartVaultManagerV3(manager).protocol()).call{value: _swapFee}("");
         require(sent, "err-swap-fee-native");
         ISwapRouter(ISmartVaultManagerV3(manager).swapRouter2()).exactInputSingle{value: _params.amountIn}(_params);
     }
 
+    // Bug free version
+//    function executeERC20SwapAndFee(ISwapRouter.ExactInputSingleParams memory _params, uint256 _swapFee) private {
+//         IERC20(_params.tokenIn).safeTransfer(ISmartVaultManagerV3(manager).liquidator(), _swapFee);
+//         IERC20(_params.tokenIn).safeApprove(ISmartVaultManagerV3(manager).swapRouter2(), _params.amountIn);
+//         ISwapRouter(ISmartVaultManagerV3(manager).swapRouter2()).exactInputSingle(_params);
+//         IWETH weth = IWETH(ISmartVaultManagerV3(manager).weth());
+//         // convert potentially received weth to eth
+//         uint256 wethBalance = weth.balanceOf(address(this));
+//         if (wethBalance > 0) weth.withdraw(wethBalance);
+//     }
+
+    // Original version
     function executeERC20SwapAndFee(ISwapRouter.ExactInputSingleParams memory _params, uint256 _swapFee) private {
         IERC20(_params.tokenIn).safeTransfer(ISmartVaultManagerV3(manager).protocol(), _swapFee);
         IERC20(_params.tokenIn).safeApprove(ISmartVaultManagerV3(manager).swapRouter2(), _params.amountIn);

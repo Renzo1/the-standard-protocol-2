@@ -13,8 +13,6 @@ import "contracts/interfaces/IPriceCalculator.sol";
 // changed all instances of Chainlink.AggregatorV3Interface to AggregatorV3InterfaceForTest 
 // changed return _symbol == NATIVE ? 0 : 18 - ERC20(_tokenAddress).decimals(); 
 // to: return _symbol == NATIVE ? 0 : 18 - IERC20Mock(_tokenAddress).decimals();
-// changed scaledCollateral = _tokenValue * 10 ** getTokenScaleDiff(
-// to: scaledCollateral = _tokenValue * 1 ** getTokenScaleDiff(
 // changed uint256 collateralUsd = scaledCollateral * avgPrice(4, tokenUsdClFeed);
 // to: (, int256 latestPrice,,,) = tokenUsdClFeed.latestRoundData()
 // uint256 collateralUsd = scaledCollateral * uint256(latestPrice);

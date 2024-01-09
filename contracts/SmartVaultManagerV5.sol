@@ -43,7 +43,8 @@ contract SmartVaultManagerV5 is ISmartVaultManager, ISmartVaultManagerV2, Initia
         uint256 burnFeeRate; ISmartVault.Status status;
     }
 
-    function initialize() initializer public {}
+    function initialize() initializer public {
+    }
 
     modifier onlyLiquidator {
         require(msg.sender == liquidator, "err-invalid-liquidator");
@@ -141,4 +142,11 @@ contract SmartVaultManagerV5 is ISmartVaultManager, ISmartVaultManagerV2, Initia
         if (address(_from) != address(0)) ISmartVault(smartVaultIndex.getVaultAddress(_tokenId)).setOwner(_to);
         emit VaultTransferred(_tokenId, _from, _to);
     }
+
+    // // Added function to fix bug in LiquidationPool
+    // function grantPoolBurnRole(address poolAddr) external onlyOwner() {
+    //     // Grant burner role to LiquidityPool for EURO
+    //     IEUROs(euros).grantRole(IEUROs(euros).BURNER_ROLE(), poolAddr);
+    // }
+
 }

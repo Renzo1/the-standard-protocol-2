@@ -54,6 +54,19 @@
     },
     {
       "inputs": [],
+      "name": "liquidator",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
       "name": "mintFeeRate",
       "outputs": [
         {
@@ -172,6 +185,7 @@
     "burnFeeRate()": "509bf42a",
     "collateralRate()": "58a6be1c",
     "liquidateVault(uint256)": "90cf0bba",
+    "liquidator()": "4046ebae",
     "mintFeeRate()": "18819a31",
     "protocol()": "8ce74426",
     "swapFeeRate()": "3a04801d",
@@ -181,7 +195,7 @@
     "totalSupply()": "18160ddd",
     "weth()": "3fc8cef3"
   },
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"HUNDRED_PC\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"burnFeeRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"collateralRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"liquidateVault\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"mintFeeRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"protocol\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"swapFeeRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"swapRouter\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"swapRouter2\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"tokenManager\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"weth\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/interfaces/ISmartVaultManagerV3.sol\":\"ISmartVaultManagerV3\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@chainlink/=node_modules/@chainlink/\",\":@eth-optimism/=node_modules/@eth-optimism/\",\":@openzeppelin/=node_modules/@openzeppelin/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":eth-gas-reporter/=node_modules/eth-gas-reporter/\",\":forge-std/=lib/forge-std/src/\",\":hardhat/=node_modules/hardhat/\"],\"viaIR\":true},\"sources\":{\"contracts/interfaces/ISmartVaultManager.sol\":{\"keccak256\":\"0xe37546ceb92dffb1c1c9a17e738f0ed5f0ead055e9cb7fdf4008aeac3f84aaf9\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://2ccfaf6a94394a0483c48270f9074d21a5a655f9a4b28fbd3adba9c5d4a460a3\",\"dweb:/ipfs/QmTK2Hc8Sx7kYJ1nCkdqYGm66vFMFo3xhpct5eNQJadpoC\"]},\"contracts/interfaces/ISmartVaultManagerV2.sol\":{\"keccak256\":\"0x0d999a523a3b00e23625b3d8a3eeaf75ddec58aca210553daef6942355cf6a4c\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://7c5bd2ca906c9519b18259ae96fcd29a6955a90c0034ecea97f3d27af9679f65\",\"dweb:/ipfs/QmXvNsMfsgctQmfxNiWzB7Qea7SjSgdZnGDjsj4YAmDksC\"]},\"contracts/interfaces/ISmartVaultManagerV3.sol\":{\"keccak256\":\"0x3fdc202f8e1dceb08b9dc3c2dde7c1fbc41c77f478e3706ac858e53816527a4a\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://eb2800500854ab4fdc2e2869bce87019f5ade00e4e2e000cdf1c486e320e5227\",\"dweb:/ipfs/QmS749TFQ5f9y5VTA3amhBssTZpBDFHAMXqCMNizb6XuXK\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"HUNDRED_PC\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"burnFeeRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"collateralRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"liquidateVault\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"liquidator\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"mintFeeRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"protocol\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"swapFeeRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"swapRouter\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"swapRouter2\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"tokenManager\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"weth\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/interfaces/ISmartVaultManagerV3.sol\":\"ISmartVaultManagerV3\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@chainlink/=node_modules/@chainlink/\",\":@eth-optimism/=node_modules/@eth-optimism/\",\":@openzeppelin/=node_modules/@openzeppelin/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":eth-gas-reporter/=node_modules/eth-gas-reporter/\",\":forge-std/=lib/forge-std/src/\",\":hardhat/=node_modules/hardhat/\"],\"viaIR\":true},\"sources\":{\"contracts/interfaces/ISmartVaultManager.sol\":{\"keccak256\":\"0x2f518b4d4c6f6f0e1410bfe0eac6ad4efc6b6eb29f2f79f829fcf56445c12869\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://a10d74f528e6d7f3415fa739b83d90a8912f409326158d15cfbf3f7b3f97f48f\",\"dweb:/ipfs/QmauKpCeDmxCd1drpNULefCaoRrJHqzwsNphStuCzQELfn\"]},\"contracts/interfaces/ISmartVaultManagerV2.sol\":{\"keccak256\":\"0x0d999a523a3b00e23625b3d8a3eeaf75ddec58aca210553daef6942355cf6a4c\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://7c5bd2ca906c9519b18259ae96fcd29a6955a90c0034ecea97f3d27af9679f65\",\"dweb:/ipfs/QmXvNsMfsgctQmfxNiWzB7Qea7SjSgdZnGDjsj4YAmDksC\"]},\"contracts/interfaces/ISmartVaultManagerV3.sol\":{\"keccak256\":\"0x3fdc202f8e1dceb08b9dc3c2dde7c1fbc41c77f478e3706ac858e53816527a4a\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://eb2800500854ab4fdc2e2869bce87019f5ade00e4e2e000cdf1c486e320e5227\",\"dweb:/ipfs/QmS749TFQ5f9y5VTA3amhBssTZpBDFHAMXqCMNizb6XuXK\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.8.17+commit.8df45f5f"
@@ -239,6 +253,19 @@
           "stateMutability": "nonpayable",
           "type": "function",
           "name": "liquidateVault"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "liquidator",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
         },
         {
           "inputs": [],
@@ -381,10 +408,10 @@
     },
     "sources": {
       "contracts/interfaces/ISmartVaultManager.sol": {
-        "keccak256": "0xe37546ceb92dffb1c1c9a17e738f0ed5f0ead055e9cb7fdf4008aeac3f84aaf9",
+        "keccak256": "0x2f518b4d4c6f6f0e1410bfe0eac6ad4efc6b6eb29f2f79f829fcf56445c12869",
         "urls": [
-          "bzz-raw://2ccfaf6a94394a0483c48270f9074d21a5a655f9a4b28fbd3adba9c5d4a460a3",
-          "dweb:/ipfs/QmTK2Hc8Sx7kYJ1nCkdqYGm66vFMFo3xhpct5eNQJadpoC"
+          "bzz-raw://a10d74f528e6d7f3415fa739b83d90a8912f409326158d15cfbf3f7b3f97f48f",
+          "dweb:/ipfs/QmauKpCeDmxCd1drpNULefCaoRrJHqzwsNphStuCzQELfn"
         ],
         "license": "UNLICENSED"
       },
@@ -409,25 +436,25 @@
   },
   "ast": {
     "absolutePath": "contracts/interfaces/ISmartVaultManagerV3.sol",
-    "id": 3764,
+    "id": 4397,
     "exportedSymbols": {
       "ISmartVaultManager": [
-        3731
+        4364
       ],
       "ISmartVaultManagerV2": [
-        3749
+        4382
       ],
       "ISmartVaultManagerV3": [
-        3763
+        4396
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "40:281:14",
+    "src": "40:281:15",
     "nodes": [
       {
-        "id": 3751,
+        "id": 4384,
         "nodeType": "PragmaDirective",
-        "src": "40:23:14",
+        "src": "40:23:15",
         "nodes": [],
         "literals": [
           "solidity",
@@ -436,66 +463,66 @@
         ]
       },
       {
-        "id": 3752,
+        "id": 4385,
         "nodeType": "ImportDirective",
-        "src": "67:53:14",
+        "src": "67:53:15",
         "nodes": [],
         "absolutePath": "contracts/interfaces/ISmartVaultManager.sol",
         "file": "contracts/interfaces/ISmartVaultManager.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 3764,
-        "sourceUnit": 3732,
+        "scope": 4397,
+        "sourceUnit": 4365,
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "id": 3753,
+        "id": 4386,
         "nodeType": "ImportDirective",
-        "src": "122:55:14",
+        "src": "122:55:15",
         "nodes": [],
         "absolutePath": "contracts/interfaces/ISmartVaultManagerV2.sol",
         "file": "contracts/interfaces/ISmartVaultManagerV2.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 3764,
-        "sourceUnit": 3750,
+        "scope": 4397,
+        "sourceUnit": 4383,
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "id": 3763,
+        "id": 4396,
         "nodeType": "ContractDefinition",
-        "src": "181:140:14",
+        "src": "181:140:15",
         "nodes": [
           {
-            "id": 3762,
+            "id": 4395,
             "nodeType": "FunctionDefinition",
-            "src": "263:55:14",
+            "src": "263:55:15",
             "nodes": [],
             "functionSelector": "cb351188",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "swapRouter2",
-            "nameLocation": "272:11:14",
+            "nameLocation": "272:11:15",
             "parameters": {
-              "id": 3758,
+              "id": 4391,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "283:2:14"
+              "src": "283:2:15"
             },
             "returnParameters": {
-              "id": 3761,
+              "id": 4394,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3760,
+                  "id": 4393,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3762,
-                  "src": "309:7:14",
+                  "scope": 4395,
+                  "src": "309:7:15",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -503,10 +530,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3759,
+                    "id": 4392,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "309:7:14",
+                    "src": "309:7:15",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -516,9 +543,9 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "308:9:14"
+              "src": "308:9:15"
             },
-            "scope": 3763,
+            "scope": 4396,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -528,33 +555,33 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 3754,
+              "id": 4387,
               "name": "ISmartVaultManagerV2",
               "nameLocations": [
-                "215:20:14"
+                "215:20:15"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 3749,
-              "src": "215:20:14"
+              "referencedDeclaration": 4382,
+              "src": "215:20:15"
             },
-            "id": 3755,
+            "id": 4388,
             "nodeType": "InheritanceSpecifier",
-            "src": "215:20:14"
+            "src": "215:20:15"
           },
           {
             "baseName": {
-              "id": 3756,
+              "id": 4389,
               "name": "ISmartVaultManager",
               "nameLocations": [
-                "237:18:14"
+                "237:18:15"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 3731,
-              "src": "237:18:14"
+              "referencedDeclaration": 4364,
+              "src": "237:18:15"
             },
-            "id": 3757,
+            "id": 4390,
             "nodeType": "InheritanceSpecifier",
-            "src": "237:18:14"
+            "src": "237:18:15"
           }
         ],
         "canonicalName": "ISmartVaultManagerV3",
@@ -562,17 +589,17 @@
         "contractKind": "interface",
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          3763,
-          3731,
-          3749
+          4396,
+          4364,
+          4382
         ],
         "name": "ISmartVaultManagerV3",
-        "nameLocation": "191:20:14",
-        "scope": 3764,
+        "nameLocation": "191:20:15",
+        "scope": 4397,
         "usedErrors": []
       }
     ],
     "license": "UNLICENSED"
   },
-  "id": 14
+  "id": 15
 }
