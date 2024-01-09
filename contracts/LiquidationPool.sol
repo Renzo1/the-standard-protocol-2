@@ -236,6 +236,7 @@ contract LiquidationPool is ILiquidationPool {
                     if (asset.amount > 0) {
                         (,int256 assetPriceUsd,,,) = Chainlink.AggregatorV3Interface(asset.token.clAddr).latestRoundData();
                         uint256 _portion = asset.amount * _positionStake / stakeTotal;
+                        
                         // // bug free version
                         // uint256 costInEuros = _portion * 1 ** (18 - asset.token.dec) * uint256(assetPriceUsd) / uint256(priceEurUsd)
                         //     * _hundredPC / _collateralRate;

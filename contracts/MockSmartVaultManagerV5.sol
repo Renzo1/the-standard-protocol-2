@@ -42,6 +42,7 @@ contract MockSmartVaultManagerV5 is ISmartVaultManager, Initializable, ERC721Upg
         uint256 burnFeeRate; ISmartVault.Status status;
     }
 
+    // The initialize() function was edited to set the set variables necessary for the test
     function initialize(uint256 _collateralRate, uint256 _feeRate, address _euros, address _protocol, address _liquidator, address _tokenManager, address _smartVaultDeployer, address _smartVaultIndex) initializer public {
         __ERC721_init("The Standard Smart Vault Manager", "TSVAULTMAN");
         __Ownable_init();
@@ -103,6 +104,7 @@ contract MockSmartVaultManagerV5 is ISmartVaultManager, Initializable, ERC721Upg
         }
     }
 
+    // Commented out to optimize test by reduce the compile time
     // function tokenURI(uint256 _tokenId) public view virtual override returns (string memory) {
     //     ISmartVault.Status memory vaultStatus = ISmartVault(smartVaultIndex.getVaultAddress(_tokenId)).status();
     //     return INFTMetadataGenerator(nftMetadataGenerator).generateNFTMetadata(_tokenId, vaultStatus);
@@ -124,14 +126,17 @@ contract MockSmartVaultManagerV5 is ISmartVaultManager, Initializable, ERC721Upg
         swapFeeRate = _rate;
     }
 
+    // Commented out to optimize test by reduce the compile time
     // function setWethAddress(address _weth) external onlyOwner() {
     //     weth = _weth;
     // }
 
+    // Commented out to optimize test by reduce the compile time
     // function setSwapRouter2(address _swapRouter) external onlyOwner() {
     //     swapRouter2 = _swapRouter;
     // }
 
+    // Commented out to optimize test by reduce the compile time
     // function setNFTMetadataGenerator(address _nftMetadataGenerator) external onlyOwner() {
     //     nftMetadataGenerator = _nftMetadataGenerator;
     // }

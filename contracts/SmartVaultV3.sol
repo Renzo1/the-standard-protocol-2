@@ -100,31 +100,31 @@ contract SmartVaultV3 is ISmartVault {
         return minted > maxMintable();
     }
 
-    // Bug free version
-    function liquidateNative() private {
-        if (address(this).balance != 0) {
-            (bool sent,) = payable(ISmartVaultManagerV3(manager).liquidator()).call{value: address(this).balance}("");
-            require(sent, "err-native-liquidate");
-        }
-    }
-
-    // // Original version
+    // // Bug free version
     // function liquidateNative() private {
     //     if (address(this).balance != 0) {
-    //         (bool sent,) = payable(ISmartVaultManagerV3(manager).protocol()).call{value: address(this).balance}("");
+    //         (bool sent,) = payable(ISmartVaultManagerV3(manager).liquidator()).call{value: address(this).balance}("");
     //         require(sent, "err-native-liquidate");
     //     }
     // }
 
-    // Bug free version
-    function liquidateERC20(IERC20 _token) private {
-        if (_token.balanceOf(address(this)) != 0) _token.safeTransfer(ISmartVaultManagerV3(manager).liquidator(), _token.balanceOf(address(this)));
+    // Original version
+    function liquidateNative() private {
+        if (address(this).balance != 0) {
+            (bool sent,) = payable(ISmartVaultManagerV3(manager).protocol()).call{value: address(this).balance}("");
+            require(sent, "err-native-liquidate");
+        }
     }
 
-    // // Original version
+    // // Bug free version
     // function liquidateERC20(IERC20 _token) private {
-    //     if (_token.balanceOf(address(this)) != 0) _token.safeTransfer(ISmartVaultManagerV3(manager).protocol(), _token.balanceOf(address(this)));
+    //     if (_token.balanceOf(address(this)) != 0) _token.safeTransfer(ISmartVaultManagerV3(manager).liquidator(), _token.balanceOf(address(this)));
     // }
+
+    // Original version
+    function liquidateERC20(IERC20 _token) private {
+        if (_token.balanceOf(address(this)) != 0) _token.safeTransfer(ISmartVaultManagerV3(manager).protocol(), _token.balanceOf(address(this)));
+    }
 
     function liquidate() external onlyVaultManager {
         require(undercollateralised(), "err-not-liquidatable");
@@ -172,36 +172,36 @@ contract SmartVaultV3 is ISmartVault {
         return minted + _amount <= maxMintable();
     }
 
-    /*Bug free version 
-    catch: mint revert if _amount == maxMintable
-    Solution: change the following line in SmartVaultV3
-    require(fullyCollateralised(_amount + fee), UNDER_COLL); 
-    to: require(fullyCollateralised(_amount), UNDER_COLL);
-    minted = minted + _amount + fee;
-    to: minted = minted + _amount;
-    EUROs.mint(_to, _amount);
-    to: EUROs.mint(_to, _amount - fee);
-    emit EUROsMinted(_to, _amount, fee);
-    to: emit EUROsMinted(_to, _amount - fee, fee);
--   */
-    function mint(address _to, uint256 _amount) external onlyOwner ifNotLiquidated {
-        uint256 fee = _amount * ISmartVaultManagerV3(manager).mintFeeRate() / ISmartVaultManagerV3(manager).HUNDRED_PC();
-        require(fullyCollateralised(_amount), UNDER_COLL);
-        minted = minted + _amount;
-        EUROs.mint(_to, _amount - fee);
-        EUROs.mint(ISmartVaultManagerV3(manager).liquidator(), fee);
-        emit EUROsMinted(_to, _amount - fee, fee);
-    }
+//     /*Bug free version 
+//     catch: mint revert if _amount == maxMintable
+//     Solution: change the following line in SmartVaultV3
+//     require(fullyCollateralised(_amount + fee), UNDER_COLL); 
+//     to: require(fullyCollateralised(_amount), UNDER_COLL);
+//     minted = minted + _amount + fee;
+//     to: minted = minted + _amount;
+//     EUROs.mint(_to, _amount);
+//     to: EUROs.mint(_to, _amount - fee);
+//     emit EUROsMinted(_to, _amount, fee);
+//     to: emit EUROsMinted(_to, _amount - fee, fee);
+// -   */
+//     function mint(address _to, uint256 _amount) external onlyOwner ifNotLiquidated {
+//         uint256 fee = _amount * ISmartVaultManagerV3(manager).mintFeeRate() / ISmartVaultManagerV3(manager).HUNDRED_PC();
+//         require(fullyCollateralised(_amount), UNDER_COLL);
+//         minted = minted + _amount;
+//         EUROs.mint(_to, _amount - fee);
+//         EUROs.mint(ISmartVaultManagerV3(manager).liquidator(), fee);
+//         emit EUROsMinted(_to, _amount - fee, fee);
+//     }
 
     // original version
-    // function mint(address _to, uint256 _amount) external onlyOwner ifNotLiquidated {
-    //     uint256 fee = _amount * ISmartVaultManagerV3(manager).mintFeeRate() / ISmartVaultManagerV3(manager).HUNDRED_PC();
-    //     require(fullyCollateralised(_amount + fee), UNDER_COLL);
-    //     minted = minted + _amount + fee;
-    //     EUROs.mint(_to, _amount);
-    //     EUROs.mint(ISmartVaultManagerV3(manager).protocol(), fee);
-    //     emit EUROsMinted(_to, _amount, fee);
-    // }
+    function mint(address _to, uint256 _amount) external onlyOwner ifNotLiquidated {
+        uint256 fee = _amount * ISmartVaultManagerV3(manager).mintFeeRate() / ISmartVaultManagerV3(manager).HUNDRED_PC();
+        require(fullyCollateralised(_amount + fee), UNDER_COLL);
+        minted = minted + _amount + fee;
+        EUROs.mint(_to, _amount);
+        EUROs.mint(ISmartVaultManagerV3(manager).protocol(), fee);
+        emit EUROsMinted(_to, _amount, fee);
+    }
 
     // Bug free version
     // Changed EUROs.burn(msg.sender, _amount);
