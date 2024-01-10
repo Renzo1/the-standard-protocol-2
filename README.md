@@ -22,7 +22,7 @@ https://github.com/Renzo1/the-standard-protocol
 
 - All files inside `test/foundry/`
 - contracts/MockSmartVaultManagerV5.sol
-- /Value flow2TS.png
+- Value flow2TS.png
 
 **Edits to Original Files:**
 
